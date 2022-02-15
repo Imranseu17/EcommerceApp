@@ -154,9 +154,6 @@ public class MainActivity extends AppCompatActivity implements MessageUserView {
                 .setOpenableLayout(drawer)
                 .build();
 
-
-
-
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 
 

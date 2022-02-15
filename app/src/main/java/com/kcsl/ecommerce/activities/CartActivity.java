@@ -153,6 +153,7 @@ public class CartActivity extends AppCompatActivity{
             public void onClick(View v) {
                 finish();
             }
+
         });
 
         if(value == 0){
