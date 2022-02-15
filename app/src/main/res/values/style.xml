@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Style_textVoew">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="Style_nav_hader">
+        <item name="android:fontFamily">@fonts/TitanOne-Regular</item>
+    </style>
+
+
+</resources>

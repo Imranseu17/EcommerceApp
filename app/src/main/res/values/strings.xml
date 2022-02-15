@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">E-ONE</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="my_api_key">AIzaSyAGm43wa6NsKu9KvoOJPHkYXqimCwGc49E</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_Profile">Profile</string>
+    <string name="title_home">Home</string>
+    <string name="title_category">Category</string>
+    <string name="title_new_cart">Cart</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_profile">Profile</string>
+    <string name="my_mobile">Mobile &amp; Tablets</string>
+    <string name="computer">Computers &amp; Laptops</string>
+    <string name="my_tv">TV , Audio/Vedio , Gaming</string>
+    <string name="camera">Camera</string>
+    <string name="home">Home Appliances</string>
+    <string name="healthy">Healthy &amp; Beauty</string>
+    <string name="fashion">Fashion</string>
+    <string name="all_Wish_list">View all Wish List</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="new_products">New Products</string>
+    <string name="featured_products">Featured Products</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+
+    <string name="success">Success</string>
+    <string name="help">Help</string>
+    <string name="info">Info</string>
+    <string name="err">Error</string>
+    <string name="ok">OK</string>
+    <string name="warning">Warning</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="line"><strike> $100.00 - $106.00 </strike> </string>
+    <string name="error_msg_unknown">An unexpected error occurred</string>
+    <string name="preference_file_key" translatable="false">preference_file_key</string>
+</resources>

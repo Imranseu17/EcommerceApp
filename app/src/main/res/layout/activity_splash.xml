@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="splashActivity"
+            type="com.kcsl.ecommerce.activities.SplashActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/white"
+        tools:context=".activity.SplashActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/eone_logo"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:textAllCaps="true"
+            android:text="Welcome  to  E - ONE"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_marginTop="20dp"/>
+
+
+
+    </LinearLayout>
+
+</layout>
