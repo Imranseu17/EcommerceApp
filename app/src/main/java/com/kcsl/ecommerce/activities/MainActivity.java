@@ -18,10 +18,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -53,14 +55,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity implements MessageUserView {
+public class MainActivity extends AppCompatActivity implements MessageUserView{
 
     private AppBarConfiguration mAppBarConfiguration;
     TextView mTextMessage;
     LinearLayout imageButton,searchButton;
     LogoutPresenter logoutPresenter;
-    LinearLayout logoutButton;
-    ImageSlider imageSlider;
+
+
 
 
     @Override
@@ -71,8 +73,8 @@ public class MainActivity extends AppCompatActivity implements MessageUserView {
         Toolbar toolbar = findViewById(R.id.toolbar);
         imageButton = findViewById(R.id.drawer_open_button);
         searchButton = findViewById(R.id.drawer_search_button);
-        logoutButton = findViewById(R.id.drawer_logout_button);
-        imageSlider = findViewById(R.id.image_slider);
+
+
         setSupportActionBar(toolbar);
         logoutPresenter = new LogoutPresenter(this);
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -86,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements MessageUserView {
                                 navController.navigate(R.id.nav_home);
                                 break;
                             case R.id.navigation_chat:
-                                navController.navigate(R.id.chatFragment);
+                                startActivity(new Intent(MainActivity.this,ChatActivity.class));
                                 break;
                             case R.id.navigation_new_cart:
                                 startActivity(new Intent(MainActivity.this,CartActivity.class));
@@ -122,28 +124,6 @@ public class MainActivity extends AppCompatActivity implements MessageUserView {
                 startActivity(new Intent(MainActivity.this,SearchProductActivity.class));
             }
         });
-
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showExitDialog();
-            }
-        });
-
-        List imageList = new  ArrayList<SlideModel>(); // Create image list
-
-        imageList.add(new SlideModel(R.drawable.slider,ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.image_1,ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.image_2, ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.image_3, ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.image_4, ScaleTypes.FIT));
-        imageList.add(new SlideModel(R.drawable.image_5, ScaleTypes.FIT));
-
-
-                imageSlider.setImageList(imageList);
-
-
-        //NavigationView navigationView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
         BottomNavBar bottomNavView = findViewById(R.id.bottom_nav_view);
         bottomNavView.setBottomNavigationListener(mOnBottomNavItemSelectedListener);
@@ -153,6 +133,19 @@ public class MainActivity extends AppCompatActivity implements MessageUserView {
                 R.id.nav_home,R.id.categoryFragment)
                 .setOpenableLayout(drawer)
                 .build();
+
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+               switch (item.getItemId()){
+                   case R.id.nav_wish_list:
+                       startActivity(new Intent(MainActivity.this,OrderListActivity.class));
+                       break;
+               }
+                return true;
+            }
+        });
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 
@@ -195,27 +188,7 @@ public class MainActivity extends AppCompatActivity implements MessageUserView {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-         switch (item.getItemId()){
-             case R.id.nav_programming:
-                 break;
-             case R.id.nav_mobile:
-                 break;
-             case R.id.nav_computer:
-                 break;
-             case R.id.nav_tv:
-                 break;
-             case R.id.nav_camera:
-                 break;
-             case R.id.nav_home:
-                 break;
-             case R.id.nav_healthy:
-                 break;
-             case R.id.nav_fashion:
-                 break;
-             case R.id.nav_wish_list:
-                 break;
 
-         }
         return super.onOptionsItemSelected(item);
     }
 

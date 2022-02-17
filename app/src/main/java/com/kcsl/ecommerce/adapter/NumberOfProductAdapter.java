@@ -6,19 +6,28 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.kcsl.ecommerce.activities.ProductDetailsActivity;
 import com.kcsl.ecommerce.R;
+import com.kcsl.ecommerce.callbacks.ProductsUserView;
 import com.kcsl.ecommerce.models.ProductDatum;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class NumberOfProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     Context context;
@@ -34,8 +43,8 @@ public class NumberOfProductAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         // infalte the item Layout
         RecyclerView.ViewHolder viewHolder = null;
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-            View viewItem = inflater.inflate(R.layout.product_display, parent, false);
-            viewHolder = new NumberOfProductAdapter.MyViewHolder(viewItem);
+        View viewItem = inflater.inflate(R.layout.product_display, parent, false);
+        viewHolder = new NumberOfProductAdapter.MyViewHolder(viewItem);
 
         return viewHolder;
     }
@@ -46,12 +55,12 @@ public class NumberOfProductAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         NumberOfProductAdapter.MyViewHolder viewHolder  = new NumberOfProductAdapter.MyViewHolder(holder.itemView);
         final ProductDatum productDatum = productDatumList.get(position);
 
-            if(productDatum.getBaseImage().getSmallImageUrl() != null){
-                Glide.with(context).load(productDatum.getBaseImage().getMediumImageUrl()).
-                        into(viewHolder.product_image);
-            }else {
-                viewHolder.product_image.setImageResource(R.drawable.prodct_display_border);
-            }
+        if(productDatum.getBaseImage().getSmallImageUrl() != null){
+            Glide.with(context).load(productDatum.getBaseImage().getMediumImageUrl()).
+                    into(viewHolder.product_image);
+        }else {
+            viewHolder.product_image.setImageResource(R.drawable.prodct_display_border);
+        }
 
         viewHolder.ratingBar.setRating(productDatum.getReviews().getTotalRating());
         viewHolder.product_name.setText(productDatum.getName());
@@ -73,15 +82,15 @@ public class NumberOfProductAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     @Override
     public int getItemCount() {
-           return productDatumList.size();
+        return productDatumList.size();
     }
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-            ImageView product_image;
-            RatingBar ratingBar;
-            TextView product_name,product_price;
+        ImageView product_image;
+        RatingBar ratingBar;
+        TextView product_name,product_price;
         public MyViewHolder(View itemView) {
             super(itemView);
             product_image = itemView.findViewById(R.id.productSmallImage);

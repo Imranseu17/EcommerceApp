@@ -32,7 +32,7 @@ public class CategoriesAdapter  extends RecyclerView.Adapter {
     @Override
     public CategoriesAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // infalte the item Layout
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.categories_adapter, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.categories_adapter_all, parent, false);
         // set the view's size, margins, paddings and layout parameters
         CategoriesAdapter.MyViewHolder vh = new CategoriesAdapter.MyViewHolder(v); // pass the view to View Holder
         return vh;

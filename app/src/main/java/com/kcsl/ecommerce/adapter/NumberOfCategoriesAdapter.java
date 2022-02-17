@@ -49,7 +49,6 @@ public class NumberOfCategoriesAdapter extends RecyclerView.Adapter {
         MyViewHolder viewHolder  = new  MyViewHolder(holder.itemView);
         final CategoriesDatum categoriesDatum = categoriesDatumList.get(position);
         viewHolder.categories_image.setImageResource(Integer.parseInt(String.valueOf(categoriesImages.get(position))));
-        viewHolder.categories_name.setText(categoriesDatum.getName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,17 +66,14 @@ public class NumberOfCategoriesAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 9;
+        return 8;
     }
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        TextView categories_name;
         ImageView categories_image;
         public MyViewHolder(View itemView) {
             super(itemView);
-            categories_name = itemView.findViewById(R.id.categoryName);
             categories_image = itemView.findViewById(R.id.categorySmallImage);
         }
     }

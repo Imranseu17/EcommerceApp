@@ -9,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.widget.NestedScrollView;
@@ -20,11 +22,15 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.appbar.AppBarLayout;
 import com.kcsl.ecommerce.activities.AllCategoryActivity;
 import com.kcsl.ecommerce.activities.AllProductActivity;
 import com.kcsl.ecommerce.R;
+import com.kcsl.ecommerce.adapter.AllProductAdapter;
 import com.kcsl.ecommerce.adapter.FlashSellAdapter;
 import com.kcsl.ecommerce.adapter.NumberOfCategoriesAdapter;
 import com.kcsl.ecommerce.adapter.NumberOfProductAdapter;
@@ -33,13 +39,18 @@ import com.kcsl.ecommerce.callbacks.ProductsUserView;
 import com.kcsl.ecommerce.dialog.CustomAlertDialog;
 import com.kcsl.ecommerce.models.Categories;
 import com.kcsl.ecommerce.models.Product;
+import com.kcsl.ecommerce.models.ProductDatum;
 import com.kcsl.ecommerce.models.Products;
 import com.kcsl.ecommerce.presenters.CategoriesPresenter;
 import com.kcsl.ecommerce.presenters.FeaturedProductsPresenter;
 import com.kcsl.ecommerce.presenters.NewProductsPresenter;
+import com.kcsl.ecommerce.utils.PaginationScrollListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+import es.dmoral.toasty.Toasty;
 
 public class HomeFragment extends Fragment implements ProductsUserView, CategoriesUserView {
 
@@ -51,7 +62,6 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
     TextView newAllProduct,featuredAllProduct;
     ShimmerFrameLayout shimmerFrameLayout;
     LinearLayout featureProducts;
-    NestedScrollView nestedScrollView;
 
     private CategoriesPresenter categoriesPresenter;
     RecyclerView categoriesList;
@@ -69,7 +79,6 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         root =  inflater.inflate(R.layout.fragment_home, container, false);
-        nestedScrollView = root.findViewById(R.id.nestedScrollView);
         featureProducts = root.findViewById(R.id.featuredProducts);
         new_products_list = root.findViewById(R.id.new_products_list);
         recyclerViewFlash = root.findViewById(R.id.recyclerFlash);
@@ -80,12 +89,21 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
         categoriesList = root.findViewById(R.id.category_list);
         allCategories = root.findViewById(R.id.newAllCategories);
 
-        nestedScrollView.fullScroll(View.FOCUS_UP);
-        nestedScrollView.smoothScrollTo(0,0);
-
         newProductsPresenter = new NewProductsPresenter(this);
         featuredProductsPresenter = new FeaturedProductsPresenter(this);
         categoriesPresenter = new CategoriesPresenter(this);
+        ImageSlider imageSlider = root. findViewById(R.id.image_slider);
+        List imageList = new  ArrayList<SlideModel>(); // Create image list
+
+        imageList.add(new SlideModel(R.drawable.slider, ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.image_1,ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.image_2, ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.image_3, ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.image_4, ScaleTypes.FIT));
+        imageList.add(new SlideModel(R.drawable.image_5, ScaleTypes.FIT));
+
+
+        imageSlider.setImageList(imageList);
         getAllCategories();
         allCategories.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,7 +174,7 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
         categoriesList.setVisibility(View.VISIBLE);
         categoriesList.setHasFixedSize(false);
         // set a GridLayoutManager with 3 number of columns , horizontal gravity and false value for reverseLayout to show the items from start to end
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3, LinearLayoutManager.VERTICAL, false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4, LinearLayoutManager.VERTICAL, false);
         categoriesList.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
         //  call the constructor of CustomAdapter to send the reference and data to Adapter
         NumberOfCategoriesAdapter numberOfCategoriesAdapter = new NumberOfCategoriesAdapter(getContext(),categories.getData(),categoriesImages);

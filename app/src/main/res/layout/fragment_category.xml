@@ -7,14 +7,13 @@
     xmlns:shimmer="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:fillViewport="true"
+    android:layout_marginBottom="50dp"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2">
+        android:layout_height="match_parent">
 
 
 
@@ -22,14 +21,11 @@
             android:id="@+id/categories_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_10"
-
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:textSize="18sp"
@@ -60,7 +56,7 @@
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmer_view_container1"
             android:layout_width="match_parent"
-            android:layout_height="700dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
@@ -118,13 +114,140 @@
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
             android:visibility="gone"
+            android:layout_below="@+id/categories_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/categories_text"/>
 
+        <LinearLayout
+            android:id="@+id/newProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category_list"
+            android:layout_marginTop="@dimen/padding_10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-light"
+                android:text="For You"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"/>
+
+
+            <TextView
+                android:id="@+id/newAllProduct"
+                android:gravity="end|center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="View All"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorBottomNavItemChecked"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+        </LinearLayout>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:layout_below="@+id/newProducts"
+            shimmer:duration="800">
+
+            <!-- 3 rows added as a placeholders -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/shimmer_number_of_product_display" />
+                    <include layout="@layout/shimmer_number_of_product_display" />
+                    <include layout="@layout/shimmer_number_of_product_display" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/new_products_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:visibility="gone"
+            android:layout_below="@+id/newProducts"/>
+
+
+        <LinearLayout
+            android:id="@+id/featuredProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_10"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_below="@+id/new_products_list">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:text="Favorite Products"
+                android:fontFamily="sans-serif-light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/featuredAllProduct"
+                android:gravity="end|center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:text="View All"
+                android:textSize="12sp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorBottomNavItemChecked"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+        </LinearLayout>
 
 
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/featured_products_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_margin="@dimen/_8sdp"
+            android:layout_below="@+id/featuredProducts"/>
+
+
+
+
+
+    </RelativeLayout>
 
 </androidx.core.widget.NestedScrollView>

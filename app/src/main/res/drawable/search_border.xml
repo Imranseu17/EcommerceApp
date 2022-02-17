@@ -21,7 +21,7 @@
         android:height="60dp"
         android:width="270dp" />
 
-    <stroke android:width="2dp" android:color="#ff00ffff"/>
+    <stroke android:width="2dp" android:color="@color/colorError"/>
 
 
 </shape>
