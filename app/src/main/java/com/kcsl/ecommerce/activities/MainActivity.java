@@ -139,8 +139,41 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                switch (item.getItemId()){
+                   case R.id.nav_programming:
+                       drawer.close();
+                       startActivity(new Intent(MainActivity.this,ProgrammingActivity.class));
+                       break;
+                   case  R.id.nav_mobile:
+                       drawer.close();
+                       startActivity(new Intent(MainActivity.this,MobileActivity.class));
+                       break;
+                   case R.id.nav_computer:
+                       drawer.close();
+                       startActivity(new Intent(MainActivity.this,ComputerActivity.class));
+                       break;
+                   case R.id.nav_tv:
+                       drawer.close();
+                       startActivity(new Intent(MainActivity.this,TVActivity.class));
+                       break;
+                   case R.id.nav_camera:
+                       drawer.close();
+                       startActivity(new Intent(MainActivity.this,CameraActivity.class));
+                       break;
+                   case R.id.nav_home:
+                       drawer.close();
+                       navController.navigate(R.id.nav_home);
+                       break;
+                   case R.id.nav_healthy:
+                       drawer.close();
+                       startActivity(new Intent(MainActivity.this,HealthyActivity.class));
+                       break;
+                   case R.id.nav_fashion:
+                       drawer.close();
+                       startActivity(new Intent(MainActivity.this,FashionActivity.class));
+                       break;
                    case R.id.nav_wish_list:
-                       startActivity(new Intent(MainActivity.this,OrderListActivity.class));
+                       drawer.close();
+                       startActivity(new Intent(MainActivity.this,WishListActivity.class));
                        break;
                }
                 return true;

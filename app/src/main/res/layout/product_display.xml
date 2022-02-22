@@ -5,20 +5,23 @@
     android:layout_marginTop="5dp"
     android:layout_width="110dp"
     android:layout_marginStart="3dp"
-    android:layout_marginEnd="5dp"
+    android:layout_marginEnd="2dp"
     android:layout_height="wrap_content"
     android:background="@drawable/prodct_display_border"
     android:orientation="vertical"
     tools:context=".ui.gallery.GalleryFragment">
+
+
     <LinearLayout
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <ImageView
             android:id="@+id/productSmallImage"
             android:layout_width="80dp"
             android:layout_height="70dp"
+            android:layout_gravity="center"
             android:background="@android:color/transparent"
             tools:ignore="ContentDescription" />
 
@@ -50,7 +53,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <TextView
@@ -72,7 +75,7 @@
             android:background="@drawable/add_box"
             android:layout_gravity="bottom|end"
             android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginStart="5dp"
             android:orientation="vertical">
 
             <ImageView
@@ -85,21 +88,5 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </LinearLayout>
