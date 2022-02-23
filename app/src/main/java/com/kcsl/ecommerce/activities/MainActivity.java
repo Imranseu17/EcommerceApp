@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -59,9 +60,8 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
 
     private AppBarConfiguration mAppBarConfiguration;
     TextView mTextMessage;
-    LinearLayout imageButton,searchButton;
     LogoutPresenter logoutPresenter;
-
+    TextView searchPage;
 
 
 
@@ -71,10 +71,7 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
         setFlag();
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        imageButton = findViewById(R.id.drawer_open_button);
-        searchButton = findViewById(R.id.drawer_search_button);
-
-
+        searchPage = findViewById(R.id.searchPage);
         setSupportActionBar(toolbar);
         logoutPresenter = new LogoutPresenter(this);
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -106,19 +103,7 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
                 };
 
 
-
-
-        imageButton.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View view) {
-                drawer.openDrawer(Gravity.LEFT);
-            }
-        });
-
-
-        searchButton.setOnClickListener(new View.OnClickListener() {
+        searchPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,SearchProductActivity.class));

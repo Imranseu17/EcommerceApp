@@ -72,7 +72,7 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
     ArrayList categoriesImages =
             new ArrayList<>(Arrays.asList(R.drawable.other,R.drawable.home,R.drawable.women,
                     R.drawable.splitac,R.drawable.speakericon,R.drawable.smart_tv,
-                    R.drawable.smart_phones, R.drawable.refrigerator, R.drawable.motorbike));
+                    R.drawable.smart_phones, R.drawable.refrigerator, R.drawable.motorbike, R.drawable.microwave_oven));
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -174,7 +174,7 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
         categoriesList.setVisibility(View.VISIBLE);
         categoriesList.setHasFixedSize(false);
         // set a GridLayoutManager with 3 number of columns , horizontal gravity and false value for reverseLayout to show the items from start to end
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4, LinearLayoutManager.VERTICAL, false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3, LinearLayoutManager.VERTICAL, false);
         categoriesList.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
         //  call the constructor of CustomAdapter to send the reference and data to Adapter
         NumberOfCategoriesAdapter numberOfCategoriesAdapter = new NumberOfCategoriesAdapter(getContext(),categories.getData(),categoriesImages);

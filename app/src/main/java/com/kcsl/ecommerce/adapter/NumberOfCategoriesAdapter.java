@@ -37,7 +37,7 @@ public class NumberOfCategoriesAdapter extends RecyclerView.Adapter {
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // infalte the item Layout
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.categories_adapter, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.categories_design_updated, parent, false);
         // set the view's size, margins, paddings and layout parameters
         MyViewHolder vh = new MyViewHolder(v); // pass the view to View Holder
         return vh;
@@ -48,8 +48,8 @@ public class NumberOfCategoriesAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         MyViewHolder viewHolder  = new  MyViewHolder(holder.itemView);
         final CategoriesDatum categoriesDatum = categoriesDatumList.get(position);
-        viewHolder.categories_image.setImageResource(Integer.parseInt(String.valueOf(categoriesImages.get(position))));
-
+        viewHolder.categoryImage.setImageResource(Integer.parseInt(String.valueOf(categoriesImages.get(position))));
+        viewHolder.categoryName.setText(categoriesDatum.getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,15 +66,17 @@ public class NumberOfCategoriesAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 8;
+        return categoriesDatumList.size();
     }
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        ImageView categories_image;
+        ImageView categoryImage;
+        TextView categoryName;
         public MyViewHolder(View itemView) {
             super(itemView);
-            categories_image = itemView.findViewById(R.id.categorySmallImage);
+            categoryImage = itemView.findViewById(R.id.categorySmallImage);
+            categoryName = itemView.findViewById(R.id.category_name);
         }
     }
 

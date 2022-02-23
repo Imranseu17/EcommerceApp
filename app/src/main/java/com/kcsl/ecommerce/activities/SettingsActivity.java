@@ -50,11 +50,11 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        settingsBinding.name.setText(sharedpreferences.getString("name","name"));
-        settingsBinding.email.setText(sharedpreferences.getString("email","email"));
-        settingsBinding.phone.setText(sharedpreferences.getString("phone number","phone number"));
-        settingsBinding.age.setText(sharedpreferences.getString("age","age"));
-        settingsBinding.nid.setText(sharedpreferences.getString("nid","nid"));
+        settingsBinding.name.setText(sharedpreferences.getString("name",""));
+        settingsBinding.email.setText(sharedpreferences.getString("email",""));
+        settingsBinding.phone.setText(sharedpreferences.getString("phone number",""));
+        settingsBinding.age.setText(sharedpreferences.getString("age",""));
+        settingsBinding.nid.setText(sharedpreferences.getString("nid",""));
 
     }
 }

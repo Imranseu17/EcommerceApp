@@ -9,11 +9,11 @@
     android:background="@drawable/categories_dispaly"
     android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/categorySmallImage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            tools:ignore="ContentDescription" />
+    <ImageView
+        android:id="@+id/categorySmallImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:ignore="ContentDescription" />
 
-    </LinearLayout>
+</LinearLayout>
