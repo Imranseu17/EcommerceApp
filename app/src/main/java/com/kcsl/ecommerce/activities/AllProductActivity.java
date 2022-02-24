@@ -62,7 +62,9 @@ public class AllProductActivity extends AppCompatActivity implements ProductsUse
 
         viewConfig();
 
-       if(getIntent().getIntExtra("new",0)==1)
+       if(getIntent().getStringExtra("HeaderName").equals("New Products"))
+           getAllNewProducts(currentPage,50);
+       else if(getIntent().getStringExtra("HeaderName").equals("For You"))
            getAllNewProducts(currentPage,50);
        else
            getAllFeaturedProducts(currentPage,50);
@@ -70,7 +72,7 @@ public class AllProductActivity extends AppCompatActivity implements ProductsUse
 
     private void  viewConfig(){
 
-       if(getIntent().getIntExtra("new",0)==1){
+        if(getIntent().getStringExtra("HeaderName").equals("New Products")){
            //New
 
            allProductBinding.allProductsList.setHasFixedSize(false);
@@ -107,7 +109,47 @@ public class AllProductActivity extends AppCompatActivity implements ProductsUse
                    return isLoading;
                }
            });
-       }else {
+       }
+        else if(getIntent().getStringExtra("HeaderName").equals("For You")){
+            //New
+
+            allProductBinding.allProductsList.setHasFixedSize(false);
+            // set a GridLayoutManager with 3 number of columns , horizontal gravity and false value for reverseLayout to show the items from start to end
+            layoutManager1 = new GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false);
+            allProductBinding.allProductsList.setLayoutManager(layoutManager1); // set LayoutManager to RecyclerView
+            //  call the constructor of CustomAdapter to send the reference and data to Adapter
+            allProductAdapter = new AllProductAdapter(this,this);
+            allProductBinding.allProductsList.setAdapter(allProductAdapter);
+
+            allProductBinding.allProductsList.addOnScrollListener(new PaginationScrollListener(layoutManager1) {
+                @Override
+                protected void loadMoreItems() {
+                    if (MY_TOTAL_PAGE > currentPage){
+                        isLoading = true;
+                        currentPage += 1;
+                        getAllNewProductsNext(currentPage,50);
+                    }
+                }
+
+                @Override
+                public int getTotalPageCount() {
+                    return TOTAL_PAGES;
+                }
+
+                @Override
+                public boolean isLastPage() {
+                    return isLastPage;
+
+                }
+
+                @Override
+                public boolean isLoading() {
+                    return isLoading;
+                }
+            });
+        }
+
+        else {
            // Featured
 
            allProductBinding.allProductsList.setHasFixedSize(false);
@@ -212,7 +254,7 @@ public class AllProductActivity extends AppCompatActivity implements ProductsUse
         for (ProductDatum content : contentList){
             count += 1;
         }
-        allProductBinding.textCategories.setText(" New Product");
+        allProductBinding.textCategories.setText(getIntent().getStringExtra("HeaderName"));
         allProductBinding.numberOfProducts.setText(count+" Products");
         if (products != null) MY_TOTAL_PAGE = products.getMeta().getLastPage();
         if (currentPage > 1) {
@@ -243,7 +285,7 @@ public class AllProductActivity extends AppCompatActivity implements ProductsUse
         for (ProductDatum content : contentList){
             count += 1;
         }
-        allProductBinding.textCategories.setText(" Featured Product");
+        allProductBinding.textCategories.setText(getIntent().getStringExtra("HeaderName"));
         allProductBinding.numberOfProducts.setText(count+" Products");
         if (products != null) MY_TOTAL_PAGE = products.getMeta().getLastPage();
         if (currentPage > 1) {

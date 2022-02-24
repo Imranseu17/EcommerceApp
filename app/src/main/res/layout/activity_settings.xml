@@ -72,7 +72,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:fontFamily="sans-serif-condensed-light"
+                android:fontFamily="@font/calibri"
                 android:text="Settings"
                 android:textColor="@color/mainText"
                 android:textSize="25sp"
@@ -86,7 +86,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="10dp"
-                android:fontFamily="sans-serif-condensed-light"
+                android:fontFamily="@font/calibri"
                 android:text="Personal Information"
                 android:textColor="@color/mainText"
                 android:textSize="15sp"
@@ -108,7 +108,7 @@
                 android:layout_marginTop="20dp"
                 android:textColor="@color/mainText"
                 android:background="@drawable/white_rounded_shape"
-                android:fontFamily="sans-serif-condensed-light"
+                android:fontFamily="@font/calibri"
                 android:hint="type name"
                 android:inputType="textPersonName"
                 android:maxLines="1" />
@@ -126,7 +126,7 @@
                 android:layout_marginTop="20dp"
                 android:textColor="@color/mainText"
                 android:background="@drawable/white_rounded_shape"
-                android:fontFamily="sans-serif-condensed-light"
+                android:fontFamily="@font/calibri"
                 android:hint="type email"
                 android:inputType="textEmailAddress"
                 android:maxLines="1" />
@@ -144,7 +144,7 @@
                 android:layout_marginTop="20dp"
                 android:textColor="@color/mainText"
                 android:background="@drawable/white_rounded_shape"
-                android:fontFamily="sans-serif-condensed-light"
+                android:fontFamily="@font/calibri"
                 android:hint="type phone number"
                 android:inputType="number"
                 android:maxLines="1" />
@@ -162,7 +162,7 @@
                 android:layout_marginTop="20dp"
                 android:textColor="@color/mainText"
                 android:background="@drawable/white_rounded_shape"
-                android:fontFamily="sans-serif-condensed-light"
+                android:fontFamily="@font/calibri"
                 android:hint="type your age"
                 android:inputType="number"
                 android:maxLines="1" />
@@ -180,7 +180,7 @@
                 android:layout_marginTop="20dp"
                 android:textColor="@color/mainText"
                 android:background="@drawable/white_rounded_shape"
-                android:fontFamily="sans-serif-condensed-light"
+                android:fontFamily="@font/calibri"
                 android:hint=" type NID "
                 android:inputType="number"
                 android:maxLines="1" />

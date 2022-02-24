@@ -20,6 +20,7 @@ import com.kcsl.ecommerce.R;
 import com.kcsl.ecommerce.activities.AllCategoryActivity;
 import com.kcsl.ecommerce.activities.AllProductActivity;
 import com.kcsl.ecommerce.adapter.CategoriesAdapter;
+import com.kcsl.ecommerce.adapter.NumberOfCategoriesAdapter;
 import com.kcsl.ecommerce.adapter.NumberOfProductAdapter;
 import com.kcsl.ecommerce.callbacks.CategoriesUserView;
 import com.kcsl.ecommerce.callbacks.ProductsUserView;
@@ -43,6 +44,8 @@ public class CategoryFragment extends Fragment implements CategoriesUserView, Pr
         TextView allCategories;
         ShimmerFrameLayout shimmerFrameLayoutCategories;
     RecyclerView new_products_list,featured_products_list;
+
+    TextView textForYou,textPopularItem;
 
     private NewProductsPresenter newProductsPresenter;
     private FeaturedProductsPresenter featuredProductsPresenter;
@@ -70,6 +73,9 @@ public class CategoryFragment extends Fragment implements CategoriesUserView, Pr
         featuredAllProduct = root.findViewById(R.id.featuredAllProduct);
         featured_products_list = root.findViewById(R.id.featured_products_list);
         shimmerFrameLayoutProduct = root.findViewById(R.id.shimmer_view_container);
+        textForYou = root.findViewById(R.id.textForYou);
+        textPopularItem = root.findViewById(R.id.textPopularItem);
+
         categoriesPresenter = new CategoriesPresenter(this);
         newProductsPresenter = new NewProductsPresenter(this);
         featuredProductsPresenter = new FeaturedProductsPresenter(this);
@@ -87,7 +93,7 @@ public class CategoryFragment extends Fragment implements CategoriesUserView, Pr
             public void onClick(View v) {
 
                 Intent intent = new Intent(getContext(), AllProductActivity.class);
-                intent.putExtra("new",1);
+                intent.putExtra("HeaderName",textForYou.getText().toString().trim());
                 startActivity(intent);
 
             }
@@ -96,7 +102,7 @@ public class CategoryFragment extends Fragment implements CategoriesUserView, Pr
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), AllProductActivity.class);
-                intent.putExtra("featured",0);
+                intent.putExtra("HeaderName",textPopularItem.getText().toString().trim());
                 startActivity(intent);
             }
         });
@@ -134,7 +140,8 @@ public class CategoryFragment extends Fragment implements CategoriesUserView, Pr
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3, LinearLayoutManager.VERTICAL, false);;
        categoriesList.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
         //  call the constructor of CustomAdapter to send the reference and data to Adapter
-        CategoriesAdapter numberOfCategoriesAdapter = new CategoriesAdapter(getContext(),categories.getData(),categoriesImages);
+        NumberOfCategoriesAdapter numberOfCategoriesAdapter = new NumberOfCategoriesAdapter
+                (getContext(),categories.getData(),categoriesImages);
         categoriesList.setAdapter(numberOfCategoriesAdapter);
 
     }

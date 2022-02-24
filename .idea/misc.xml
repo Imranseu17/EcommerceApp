@@ -100,11 +100,13 @@
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/ic_signout.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/ic_twotone_earbuds_24.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/oval.xml" value="0.1405" />
+        <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/product_display_image.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/rounded_button_buy.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/rounded_button_cart.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/rounded_ractangle.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/search_border.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/star.xml" value="0.1405" />
+        <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout-v21/all_product_display.xml" value="0.22" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout-v21/row.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_address.xml" value="0.25" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_all_product.xml" value="0.12604166666666666" />
@@ -122,6 +124,7 @@
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_order_list.xml" value="0.25" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_payment_method.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_product_details.xml" value="0.22" />
+        <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_products.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_programming.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_promo_code.xml" value="0.33" />
@@ -136,7 +139,7 @@
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/bottom_nav_bar.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/categories_adapter.xml" value="0.2" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/categories_adapter_all.xml" value="0.12604166666666666" />
-        <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/categories_design_updated.xml" value="0.2" />
+        <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/categories_design_updated.xml" value="0.33" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/chat_adapter.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/checkout_item_layout.xml" value="0.2" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/content_main.xml" value="0.12604166666666666" />

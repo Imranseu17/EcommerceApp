@@ -26,6 +26,8 @@ import com.kcsl.ecommerce.presenters.CartDetailsPresenter;
 import com.kcsl.ecommerce.utils.DebugLog;
 import com.kcsl.ecommerce.utils.SharedDataSaveLoad;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +37,9 @@ public class CartActivity extends AppCompatActivity{
 
     ActivityCartBinding cartBinding;
     private int currentApiVersion;
-    int value = 1;
+    int value;
+    private static final DecimalFormat df = new DecimalFormat("0.00");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,8 @@ public class CartActivity extends AppCompatActivity{
             });
         }
 
+        df.setRoundingMode(RoundingMode.DOWN);
+
         Item itemData = getIntent()
                 .getParcelableExtra("item");
 
@@ -70,7 +76,6 @@ public class CartActivity extends AppCompatActivity{
                 cartBinding.image.setImageResource(R.drawable.prodct_display_border);
             }
             cartBinding.name.setText(itemData.getName());
-            cartBinding.amount.setText("\u09F3"+ itemData.getFormatedPrice().substring(1));
             cartBinding.sku.setText("SKU: "+itemData.getSku());
 
 
@@ -85,9 +90,9 @@ public class CartActivity extends AppCompatActivity{
                         double discount = Double.parseDouble(itemData.getFormatedDiscountAmount().substring(1));
                         double  subtotal = price * value;
                         double grandTotal = subtotal - discount;
-                        cartBinding.subtotal.setText("Subtotal               :"+"\u09F3"+subtotal);
-                        cartBinding.discount.setText("Discount              :"+"\u09F3"+discount );
-                        cartBinding.grandTotal.setText("Grand Total         :"+"\u09F3"+grandTotal);
+                        cartBinding.subtotal.setText("Subtotal               :"+"\u09F3"+df.format(subtotal));
+                        cartBinding.discount.setText("Discount              :"+"\u09F3"+df.format(discount) );
+                        cartBinding.grandTotal.setText("Grand Total         :"+"\u09F3"+df.format(grandTotal));
                     }catch (Exception e){
                         e.printStackTrace();
                     }
@@ -108,22 +113,28 @@ public class CartActivity extends AppCompatActivity{
                         double subtotalquentity = price * value;
                         double   subtotalMin = subtotalquentity ;
                         double grandTotalMin = subtotalMin - discount;
-                        cartBinding.subtotal.setText("Subtotal               :"+"\u09F3"+subtotalMin);
-                        cartBinding.discount.setText("Discount              :"+"\u09F3"+discount);
-                        cartBinding.grandTotal.setText("Grand Total         :"+"\u09F3"+grandTotalMin);
+                        cartBinding.subtotal.setText("Subtotal               :"+"\u09F3"+df.format(subtotalMin));
+                        cartBinding.discount.setText("Discount              :"+"\u09F3"+df.format(discount));
+                        cartBinding.grandTotal.setText("Grand Total         :"+"\u09F3"+df.format(grandTotalMin));
                     }catch (Exception e){
                         e.printStackTrace();
                     }
                 }
             });
-
-                cartBinding.value.setText(""+value);
-            cartBinding.subtotal.setText("Subtotal               :"+"\u09F3"+
-                    Double.parseDouble(itemData.getFormatedPrice().substring(1)));
-            cartBinding.discount.setText("Discount              :"+"\u09F3"+
-                    Double.parseDouble(itemData.getFormatedDiscountAmount().substring(1)));
-            cartBinding.grandTotal.setText("Grand Total         :"+"\u09F3"+
-                    Double.parseDouble(itemData.getFormatedTotal().substring(1)));
+            try {
+                value = itemData.getQuantity();
+                cartBinding.amount.setText("\u09F3"+ Double.parseDouble(
+                        itemData.getFormatedPrice().substring(1)));
+                cartBinding.value.setText(""+itemData.getQuantity());
+                cartBinding.subtotal.setText("Subtotal               :"+"\u09F3"+
+                        Double.parseDouble(itemData.getFormatedPrice().substring(1))*itemData.getQuantity());
+                cartBinding.discount.setText("Discount              :"+"\u09F3"+
+                        Double.parseDouble(itemData.getFormatedDiscountAmount().substring(1)));
+                cartBinding.grandTotal.setText("Grand Total         :"+"\u09F3"+
+                        Double.parseDouble(itemData.getFormatedPrice().substring(1))*itemData.getQuantity());
+            }catch (Exception e){
+                e.printStackTrace();
+            }
 
         }else {
             cartBinding.productData.setVisibility(View.GONE);

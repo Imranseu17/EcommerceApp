@@ -55,7 +55,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:textSize="18sp"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="@font/calibri"
                 android:text="Categories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                 android:layout_marginTop="8dp"
                 android:text="View All"
                 android:textSize="12sp"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="@font/calibri"
                 android:textColor="@color/colorBottomNavItemChecked"
                 app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right_24" />
 
@@ -119,11 +119,11 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/newProductText"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:textSize="18sp"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="@font/calibri"
             android:text="@string/new_products"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
             android:layout_marginTop="8dp"
             android:text="View All"
             android:textSize="12sp"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="@font/calibri"
             android:textColor="@color/colorBottomNavItemChecked"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
@@ -189,7 +189,7 @@
 
 
         <LinearLayout
-        android:id="@+id/featuredProducts"
+        android:id="@+id/featuredProductText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_10"
@@ -198,12 +198,12 @@
         android:layout_below="@+id/new_products_list">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textfeatured"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:textSize="18sp"
             android:text="@string/featured_products"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="@font/calibri"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             card_view:layout_constraintStart_toStartOf="parent"
@@ -215,7 +215,7 @@
            android:gravity="end|center"
            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-           android:fontFamily="sans-serif-light"
+           android:fontFamily="@font/calibri"
            android:text="View All"
             android:textSize="12sp"
            android:layout_marginTop="8dp"
@@ -235,7 +235,7 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             android:layout_margin="@dimen/_8sdp"
-            android:layout_below="@+id/featuredProducts"/>
+            android:layout_below="@+id/featuredProductText"/>
 
 
     </RelativeLayout>

@@ -52,6 +52,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="#000000"
+                    android:fontFamily="@font/calibri"
                     card_view:layout_constraintStart_toStartOf="parent"
                     card_view:layout_constraintTop_toTopOf="parent"/>
 
@@ -98,6 +99,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="15sp"
                             android:textColor="#F44336"
+                            android:fontFamily="@font/calibri"
                             android:layout_marginStart="@dimen/_10sdp"
                             android:text="$ 590.0"
                             card_view:layout_constraintStart_toStartOf="parent"
@@ -110,6 +112,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:textStyle="bold"
+                            android:fontFamily="@font/calibri"
                             android:text="Lexar JumpDrive M35 32GB ..."
                             android:textColor="#000000"
                             android:textSize="14sp"
@@ -124,6 +127,7 @@
                             android:textColor="#000000"
                             android:layout_marginStart="@dimen/_10sdp"
                             android:textAllCaps="true"
+                            android:fontFamily="@font/calibri"
                             android:text="SKU:JUMPDRIVEM35"
                             card_view:layout_constraintStart_toStartOf="parent"
                             card_view:layout_constraintTop_toTopOf="parent"/>
@@ -167,6 +171,7 @@
                                 android:layout_marginStart="5dp"
                                 android:layout_marginEnd="5dp"
                                 android:text="1"
+                                android:fontFamily="@font/calibri"
                                 android:textSize="16sp"/>
 
 
@@ -225,6 +230,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:textSize="14sp"
+                        android:fontFamily="@font/calibri"
                         android:textColor="@color/white"
                         android:text="Apply Coupon"
                         android:textAllCaps="true"/>
@@ -242,6 +248,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/calibri"
                 android:textSize="14dp"
                 android:text="*Coupon discount may very upon product categories"/>
 
@@ -261,8 +268,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_8sdp"
-                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:orientation="horizontal">
 
@@ -275,6 +281,7 @@
                             android:id="@+id/subtotal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/calibri"
                             android:text="Subtotal                :$500"
                             android:textSize="15sp"
                             android:textColor="@color/black"/>
@@ -283,6 +290,7 @@
                             android:id="@+id/discount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/calibri"
                             android:text="Discount               :$500"
                             android:textSize="15sp"
                             android:layout_marginTop="5dp"
@@ -293,6 +301,7 @@
                             android:id="@+id/grandTotal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/calibri"
                             android:text="Grand Total           :$500"
                             android:textSize="15sp"
                             android:textStyle="bold"
@@ -303,10 +312,10 @@
 
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginStart="20dp"
                         android:orientation="vertical">
 
 
@@ -331,6 +340,7 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_marginEnd="@dimen/_10sdp"
                             android:textSize="16sp"
+                            android:fontFamily="@font/calibri"
                             android:textColor="@color/white"/>
 
 
@@ -382,7 +392,7 @@
                 android:layout_height="wrap_content"
                 android:text="Empty Bag"
                 android:textColor="#9B9B9B"
-                android:fontFamily="sans-serif-condensed-light"
+                android:fontFamily="@font/calibri"
                 android:textSize="25dp"
                 >
 

@@ -63,6 +63,8 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
     ShimmerFrameLayout shimmerFrameLayout;
     LinearLayout featureProducts;
 
+    TextView textNewProduct,textFeaturedProduct;
+
     private CategoriesPresenter categoriesPresenter;
     RecyclerView categoriesList;
     TextView allCategories;
@@ -79,7 +81,7 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         root =  inflater.inflate(R.layout.fragment_home, container, false);
-        featureProducts = root.findViewById(R.id.featuredProducts);
+        featureProducts = root.findViewById(R.id.featuredProductText);
         new_products_list = root.findViewById(R.id.new_products_list);
         recyclerViewFlash = root.findViewById(R.id.recyclerFlash);
         newAllProduct = root.findViewById(R.id.newAllProduct);
@@ -88,6 +90,8 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
         shimmerFrameLayout = root.findViewById(R.id.shimmer_view_container);
         categoriesList = root.findViewById(R.id.category_list);
         allCategories = root.findViewById(R.id.newAllCategories);
+        textNewProduct = root.findViewById(R.id.newProductText);
+        textFeaturedProduct = root.findViewById(R.id.textfeatured);
 
         newProductsPresenter = new NewProductsPresenter(this);
         featuredProductsPresenter = new FeaturedProductsPresenter(this);
@@ -123,7 +127,7 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
             public void onClick(View v) {
 
                 Intent intent = new Intent(getContext(), AllProductActivity.class);
-                intent.putExtra("new",1);
+                intent.putExtra("HeaderName",textNewProduct.getText().toString().trim());
                 startActivity(intent);
 
             }
@@ -132,7 +136,7 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), AllProductActivity.class);
-                intent.putExtra("featured",0);
+                intent.putExtra("HeaderName",textFeaturedProduct.getText().toString().trim());
                 startActivity(intent);
             }
         });

@@ -33,7 +33,7 @@
             android:id="@+id/categoryName"
             android:layout_marginTop="5dp"
             android:text="simple product"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="@font/calibri"
             android:maxLines="2"
             android:textColor="#F44336"
             android:textSize="11sp"

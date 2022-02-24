@@ -14,7 +14,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="100dp"
         android:visibility="gone"
-        android:fontFamily="sans-serif-condensed-light"
+        android:fontFamily="@font/calibri"
         android:text="Sign up"
         android:textColor="@color/mainText"
         android:textSize="30sp"
@@ -40,7 +40,7 @@
             android:paddingRight="20dp"
             android:textColor="@color/mainText"
             android:background="@drawable/quentity_background"
-            android:fontFamily="sans-serif-condensed-light"
+            android:fontFamily="@font/calibri"
             android:hint="Full Name"
             android:inputType="textPersonName"
             android:maxLines="1" />
@@ -55,7 +55,7 @@
             android:paddingRight="20dp"
             android:textColor="@color/mainText"
             android:background="@drawable/quentity_background"
-            android:fontFamily="sans-serif-condensed-light"
+            android:fontFamily="@font/calibri"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:maxLines="1" />
@@ -71,7 +71,7 @@
             android:paddingRight="20dp"
             android:paddingLeft="20dp"
             android:background="@drawable/quentity_background"
-            android:fontFamily="sans-serif-condensed-light"
+            android:fontFamily="@font/calibri"
             android:hint="Password"
             android:inputType="textPassword"
             android:maxLines="1" />
@@ -86,7 +86,7 @@
             android:paddingRight="20dp"
             android:paddingLeft="20dp"
             android:background="@drawable/quentity_background"
-            android:fontFamily="sans-serif-condensed-light"
+            android:fontFamily="@font/calibri"
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:maxLines="1" />

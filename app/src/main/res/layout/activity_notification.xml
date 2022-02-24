@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="22dp"
                 android:layout_weight="1"
-                android:fontFamily="sans-serif-condensed-light"
+                android:fontFamily="@font/calibri"
                 android:gravity="center"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:text="Notification"
