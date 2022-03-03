@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="crateAccountActivity"
+            type="com.kcsl.ecommerce.activities.CreateAccountActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#BF2F34"
+        tools:context=".activities.CreateAccountActivity">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="32dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/back"
+            />
+
+        <TextView
+            android:id="@+id/welcome_to_"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/_100sdp"
+            android:text="@string/welcome_to_"
+            android:textAppearance="@style/welcome_to_"
+            android:gravity="center_horizontal|top"
+            />
+
+        <TextView
+            android:id="@+id/sign_in_y"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_below="@+id/welcome_to_"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal|top"
+            android:text="@string/signup_to_y"
+            android:textAppearance="@style/signup_to_y" />
+
+        <LinearLayout
+            android:id="@+id/edit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/sign_in_y"
+            android:layout_marginTop="30dp">
+
+            <EditText
+                android:id="@+id/firstNameEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:paddingLeft="30dp"
+                android:drawableRight="@null"
+                android:paddingRight="20dp"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:background="@drawable/create_account_edit"
+                android:fontFamily="@font/calibri"
+                android:hint="First Name"
+                android:textAlignment="center"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/lastNameEt"
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:paddingLeft="30dp"
+                android:drawableRight="@null"
+                android:paddingRight="20dp"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:background="@drawable/create_account_edit"
+                android:fontFamily="@font/calibri"
+                android:hint="Last Name"
+                android:textAlignment="center"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/emailEtORPhone"
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:paddingLeft="30dp"
+                android:drawableRight="@null"
+                android:paddingRight="20dp"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:background="@drawable/create_account_edit"
+                android:fontFamily="@font/calibri"
+                android:hint="Email ID/Phone Number"
+                android:textAlignment="center"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/passEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:paddingLeft="30dp"
+                android:drawableRight="@null"
+                android:paddingRight="20dp"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:background="@drawable/create_account_edit"
+                android:fontFamily="@font/calibri"
+                android:hint="Password"
+                android:textAlignment="center"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/rePassEt"
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:paddingLeft="30dp"
+                android:drawableRight="@null"
+                android:paddingRight="20dp"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:background="@drawable/create_account_edit"
+                android:fontFamily="@font/calibri"
+                android:hint="Re-enter Password"
+                android:textAlignment="center"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/edit_layout"
+            android:layout_margin="30dp"
+            android:gravity="center"
+            android:background="@drawable/create_button_background"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:id="@+id/log_in_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Create"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/calibri"
+                android:textAppearance="@style/create"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/don_t_have_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:gravity="top"
+            android:text="@string/don_t_have_"
+            android:textAppearance="@style/don_t_have_" />
+
+
+    </RelativeLayout>
+
+</layout>

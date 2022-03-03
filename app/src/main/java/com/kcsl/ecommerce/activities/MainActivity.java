@@ -61,8 +61,10 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
     private AppBarConfiguration mAppBarConfiguration;
     TextView mTextMessage;
     LogoutPresenter logoutPresenter;
-    TextView searchPage;
 
+    LinearLayout drawerOpen;
+    ImageView searchbutton,notification;
+    TextView searchText;
 
 
     @Override
@@ -71,12 +73,31 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
         setFlag();
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        searchPage = findViewById(R.id.searchPage);
         setSupportActionBar(toolbar);
         logoutPresenter = new LogoutPresenter(this);
+        searchbutton = findViewById(R.id.search_button);
+        searchText = findViewById(R.id.search_text);
+        notification = findViewById(R.id.notification);
+        drawerOpen = findViewById(R.id.drawer_open_button);
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-         BottomNavBar.OnBottomNavigationListener mOnBottomNavItemSelectedListener =
+        drawerOpen.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+                drawer.openDrawer(Gravity.LEFT);
+            }
+        });
+
+        notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,NotificationActivity.class));
+            }
+        });
+
+        BottomNavBar.OnBottomNavigationListener mOnBottomNavItemSelectedListener =
                 new BottomNavBar.OnBottomNavigationListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -84,18 +105,16 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
                             case R.id.navigation_home:
                                 navController.navigate(R.id.nav_home);
                                 break;
-                            case R.id.navigation_chat:
-                                startActivity(new Intent(MainActivity.this,ChatActivity.class));
+                            case R.id.navigation_wishlist:
+                                startActivity(new Intent(MainActivity.this,WishListActivity.class));
                                 break;
-                            case R.id.navigation_new_cart:
+                            case R.id.navigation_order:
                                 startActivity(new Intent(MainActivity.this,CartActivity.class));
                                 break;
-                            case R.id.navigation_category:
-                                navController.navigate(R.id.categoryFragment);
-                                break;
-                            case R.id.navigation_profile:
+                            case R.id.navigation_account:
                                 startActivity(new Intent(MainActivity.this,ProfileActivity.class));
                                 break;
+
                         }
                         NavigationUI.onNavDestinationSelected ( menuItem, navController);
                         return true;
@@ -103,7 +122,13 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
                 };
 
 
-        searchPage.setOnClickListener(new View.OnClickListener() {
+        searchText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,SearchProductActivity.class));
+            }
+        });
+        searchbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,SearchProductActivity.class));

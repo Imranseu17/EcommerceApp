@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/flash_sell_product_bg"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="180dp"
+        android:layout_height="170dp"
+        android:background="@drawable/flash_sell_image_bg"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/flash_cell_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/shoes_image"/>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:textAppearance="@style/fs_nike_air"
+        android:text="@string/fs_nike_air"
+        android:fontFamily="@font/calibri"
+        android:maxLines="2"
+        android:textSize="12sp"
+        android:ellipsize="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/productPrice"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:fontFamily="@font/calibri"
+            android:textAppearance="@style/some_id_price"
+            android:text="@string/some_id_price"
+            android:maxLines="2"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/productOldPrice"
+            android:textAllCaps="true"
+            android:fontFamily="@font/calibri"
+            android:textAppearance="@style/some_id_old_price"
+            android:text="@string/some_id_old_price"
+            android:maxLines="2"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/productPercentege"
+            android:textAllCaps="true"
+            android:fontFamily="@font/calibri"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textAppearance="@style/off"
+            android:textStyle="bold"
+            android:text="@string/off"
+            android:maxLines="2"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

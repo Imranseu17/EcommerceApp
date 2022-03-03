@@ -14,5 +14,793 @@
 
     <style name="AppTheme.Toolbar" parent="ThemeOverlay.AppCompat.ActionBar" />
 
+    <style name="welcome_bac">
+
+        <item name="android:textSize">
+            32sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="log_in">
+
+        <item name="android:textSize">
+            24sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="labelled">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="welcome_to_">
+
+        <item name="android:textSize">
+            28sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.02
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="forgot_pass">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #6342E8
+        </item>
+
+    </style>
+
+    <style name="not_registe">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #A1A1A1
+        </item>
+
+    </style>
+
+    <style name="login_with">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.04
+        </item>
+
+        <item name="android:textColor">
+            #9098B1
+        </item>
+
+    </style>
+
+    <style name="signup_to_y">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.02
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="create">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.02
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="don_t_have_">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.02
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="verify_your">
+
+        <item name="android:textSize">
+            24sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.02
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+
+    <style name="explores_wo">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="please_ente">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.04
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="phone_numbe">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.04
+        </item>
+
+        <item name="android:textColor">
+            #223263
+        </item>
+
+    </style>
+
+
+    <style name="some_id">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.04
+        </item>
+
+        <item name="android:textColor">
+            #9098B1
+        </item>
+
+    </style>
+
+    <style name="we_will_sen">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.04
+        </item>
+
+        <item name="android:textColor">
+            #BF2F34
+        </item>
+
+    </style>
+
+    <style name="phone_verif">
+
+        <item name="android:textSize">
+            24sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.02
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="enter_your_">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.02
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="didn_t_you_">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.02
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="resent_new_">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.02
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="new_passwor">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.04
+        </item>
+
+        <item name="android:textColor">
+            #223263
+        </item>
+
+    </style>
+
+    <style name="new_password">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.04
+        </item>
+
+        <item name="android:textColor">
+            #223263
+        </item>
+
+    </style>
+
+    <style name="personal_de">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #9B9B9B
+        </item>
+
+    </style>
+
+    <style name="all">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="categories_item_text">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="new_user_fr">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.01
+        </item>
+
+        <item name="android:textColor">
+            #121212
+        </item>
+
+    </style>
+
+    <style name="see_all">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.01
+        </item>
+
+        <item name="android:textColor">
+            #181725
+        </item>
+
+    </style>
+
+    <style name="category">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.01
+        </item>
+
+        <item name="android:textColor">
+            #121212
+        </item>
+
+    </style>
+
+    <style name="main_category_title">
+
+        <item name="android:textSize">
+            11.84sp
+        </item>
+
+        <item name="android:textColor">
+            #414A58
+        </item>
+
+    </style>
+
+    <style name="some_id_parcentege">
+
+        <item name="android:textSize">
+            10.5sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.02
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+        <item name="android:shadowColor">
+            #33000000
+        </item>
+
+        <item name="android:shadowDx">
+            0
+        </item>
+
+        <item name="android:shadowDy">
+            2
+        </item>
+
+        <item name="android:shadowRadius">
+            4
+        </item>
+
+    </style>
+
+    <style name="dkny_t_shir">
+
+        <item name="android:textSize">
+            12.5sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.02
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="bdt_19">
+
+        <item name="android:textSize">
+            13.5sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.02
+        </item>
+
+        <item name="android:textColor">
+            #C34146
+        </item>
+
+    </style>
+
+    <style name="bdt69">
+
+        <item name="android:textSize">
+            9sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.02
+        </item>
+
+        <item name="android:textColor">
+            #ACACAC
+        </item>
+
+    </style>
+
+    <style name="adjustable_">
+
+        <item name="android:textSize">
+            21sp
+        </item>
+
+        <item name="android:textColor">
+            #F4F5F7
+        </item>
+
+    </style>
+
+    <style name="hughlan_wor">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="some_id_adjustable">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #EFF0EF
+        </item>
+
+    </style>
+
+    <style name="buy_now">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #040B14
+        </item>
+
+    </style>
+
+    <style name="flash_sell">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.01
+        </item>
+
+        <item name="android:textColor">
+            #121212
+        </item>
+
+    </style>
+
+    <style name="some_id_time">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.03
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="some_id_time_dot">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.01
+        </item>
+
+        <item name="android:textColor">
+            #181725
+        </item>
+
+    </style>
+
+    <style name="fs_nike_air">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.04
+        </item>
+
+        <item name="android:textColor">
+            #223263
+        </item>
+
+    </style>
+
+    <style name="some_id_price">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.04
+        </item>
+
+        <item name="android:textColor">
+            #BF2F34
+        </item>
+
+    </style>
+
+    <style name="some_id_old_price">
+
+        <item name="android:textSize">
+            10sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.05
+        </item>
+
+        <item name="android:textColor">
+            #181725
+        </item>
+
+    </style>
+
+    <style name="off">
+
+        <item name="android:textSize">
+            10sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.05
+        </item>
+
+        <item name="android:textColor">
+            #BF2F34
+        </item>
+
+    </style>
+
+    <style name="trending">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.01
+        </item>
+
+        <item name="android:textColor">
+            #121212
+        </item>
+
+    </style>
+
+    <style name="smart_watch">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #040B14
+        </item>
+
+    </style>
+
+    <style name="see_collect">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #BA5C3D
+        </item>
+
+    </style>
+
+    <style name="workspaces">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.01
+        </item>
+
+        <item name="android:textColor">
+            #121212
+        </item>
+
+    </style>
+
+    <style name="developer">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+    <style name="suggested_i">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #A6A798
+        </item>
+
+    </style>
+
+    <style name="sports">
+
+        <item name="android:textSize">
+            10sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="some_id_cart_price">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.02
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="items">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.02
+        </item>
+
+        <item name="android:textColor">
+            #B3FFFFFF
+        </item>
+
+    </style>
 
 </resources>

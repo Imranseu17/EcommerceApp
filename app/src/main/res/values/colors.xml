@@ -70,5 +70,8 @@
     <color name="colorBottomNavItemUnchecked">#c4c4c4</color>
     <color name="flash_background">#f0f1f5</color>
     <color name="gray">#9e9e9e</color>
+    <color name="text_color">#181725</color>
+
+
 
 </resources>

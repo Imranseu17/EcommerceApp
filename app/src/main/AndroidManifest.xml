@@ -17,6 +17,38 @@
         android:theme="@style/Theme.KcslEcommerce"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.SavePasswordActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.ForgotPasswordPage"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.VerifyPhoneActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.CreateAccountActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.LoginUpdateActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.OnBoardActivityTwo"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.OnBoardActivityOne"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.OnBoardActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
             android:name=".activities.FashionActivity"
             android:exported="false" />
         <activity

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="7dp"
+    android:layout_marginStart="3dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/adjustablebg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/adjustable_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/adjustable_"
+                android:textAppearance="@style/adjustable_"
+                android:layout_marginTop="20dp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/hughlan_wor"
+                    android:layout_width="128dp"
+                    android:layout_height="18dp"
+                    android:text="@string/hughlan_wor"
+                    android:textAppearance="@style/hughlan_wor"
+                    android:gravity="top"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dot_adjustable"
+                    android:layout_marginTop="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/some_id"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/some_id_adjustable"
+                    android:textAppearance="@style/some_id_adjustable"
+                    android:gravity="top"
+                    />
+
+                <RatingBar
+                    android:layout_marginStart="7dp"
+                    android:id="@+id/productRating"
+                    android:theme="@style/RatingBar"
+                    android:layout_marginTop="3dp"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="1"
+                    android:stepSize="0.5" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Shop Now"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:fontFamily="@font/calibri"
+                android:textAppearance="@style/buy_now"
+                android:background="@drawable/now_background"
+                android:textSize="@dimen/dp16"/>
+
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_chair"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"/>
+
+    </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/scroll_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/scroll_icon_activated"/>
+
+                <ImageView
+                    android:id="@+id/scroll_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/scroll_icon_not_activated"/>
+                <ImageView
+                    android:id="@+id/scroll_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/scroll_icon_not_activated"/>
+
+
+            </LinearLayout>
+
+</LinearLayout>

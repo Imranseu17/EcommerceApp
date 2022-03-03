@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:background="@drawable/all_bg"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/categories_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/home_icon_silhouette" />
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/categories_name"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="2dp"
+        android:layout_gravity="center"
+        android:textAppearance="@style/sports"
+        android:text="@string/sports"
+        android:fontFamily="@font/calibri"
+        android:maxLines="2"
+        android:textSize="14sp"
+        android:ellipsize="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+</LinearLayout>
