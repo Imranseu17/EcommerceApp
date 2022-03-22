@@ -17,6 +17,94 @@
         android:theme="@style/Theme.KcslEcommerce"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.TrackOrderActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar"/>
+        <activity
+            android:name=".activities.OrderAcceptActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.OrderConfirmationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.SecureActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.AddAddressActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.CardPropertiesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.ShoppingCartActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.ChangePasswordActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.ProfileEditScreenActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.FollowActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.FeedActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.OfferActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.NotificationActivityItem"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.ItemDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.CategoryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.ProfileSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.NewUserGiftActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.TradingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.WorkSpaceActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.FilterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.SortByActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
+            android:name=".activities.FlashSellActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
             android:name=".activities.SavePasswordActivity"
             android:exported="false"
             android:theme="@style/Theme.KcslEcommerce.NoActionBar" />

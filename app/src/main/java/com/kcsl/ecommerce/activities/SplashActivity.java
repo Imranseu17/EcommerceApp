@@ -4,14 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.databinding.DataBindingUtil;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
-import android.window.SplashScreen;
 
 import com.kcsl.ecommerce.R;
 import com.kcsl.ecommerce.databinding.ActivitySplashBinding;
@@ -21,6 +18,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private int currentApiVersion;
     ActivitySplashBinding splashBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +41,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
             });
         }
+
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
 
         splashBinding.browseLayout.setOnClickListener(new View.OnClickListener() {
@@ -60,4 +59,6 @@ public class SplashActivity extends AppCompatActivity {
         });
 
     }
+
+
 }

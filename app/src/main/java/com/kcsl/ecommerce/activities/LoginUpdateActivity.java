@@ -44,7 +44,7 @@ public class LoginUpdateActivity extends AppCompatActivity {
         loginUpdateBinding.backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                startActivity(new Intent(LoginUpdateActivity.this,SplashActivity.class));
             }
         });
 

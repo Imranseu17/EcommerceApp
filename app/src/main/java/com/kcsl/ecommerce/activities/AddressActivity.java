@@ -2,10 +2,12 @@ package com.kcsl.ecommerce.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -14,6 +16,7 @@ import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
@@ -41,15 +44,8 @@ import java.util.Locale;
 
 public class AddressActivity extends AppCompatActivity   {
 
-    GoogleMap nMap;
-    SupportMapFragment mapMessageLocation;
-    String placeName;
-    double latitude, longitude;
-    double endlatitude, endlongitude;
-    private FusedLocationProviderClient mFusedLocationClient;
-    int PROXIMITY_RADIUS = 500;
-    private static final int REQUEST_FINE_LOCATION = 0;
     ActivityAddressBinding addressBinding;
+    private int currentApiVersion;
 
 
     @Override
@@ -57,121 +53,66 @@ public class AddressActivity extends AppCompatActivity   {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         addressBinding = DataBindingUtil. setContentView(this,R.layout.activity_address);
-
-        loadPermissions(android.Manifest.permission.ACCESS_FINE_LOCATION,REQUEST_FINE_LOCATION);
-
-        if (mapMessageLocation == null) {
-            mapMessageLocation = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        }
-        mapMessageLocation.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(GoogleMap map) {
-                nMap = map;
-                if (ActivityCompat.checkSelfPermission(AddressActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
-                        (AddressActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    return;
+        currentApiVersion = android.os.Build.VERSION.SDK_INT;
+        final int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        if (currentApiVersion >= Build.VERSION_CODES.KITKAT) {
+            getWindow().getDecorView().setSystemUiVisibility(flags);
+            final View decorView = getWindow().getDecorView();
+            decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+                @Override
+                public void onSystemUiVisibilityChange(int visibility) {
+                    if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                        decorView.setSystemUiVisibility(flags);
+                    }
                 }
-                nMap.setMyLocationEnabled(true);
+            });
+        }
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+
+        addressBinding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-
-        mFusedLocationClient.getLastLocation()
-                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                    @Override
-                    public void onSuccess(Location location) {
-
-                        if (location != null) {
-
-                            latitude = location.getLatitude();
-                            longitude = location.getLongitude();
-                            animateCamera(location);
-                            MarkerOptions markerOptions = new MarkerOptions();
-                            markerOptions.position(new LatLng(latitude,longitude));
-                            markerOptions.title(getCompleteAddressString(latitude,longitude));
-                            nMap.addMarker(markerOptions);
-                            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-                            nMap.animateCamera(CameraUpdateFactory.zoomTo(15));
-                            nMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(latitude,longitude)));
-
-                        }
-                    }
-                });
-
-    }
-
-    private void loadPermissions(String perm,int requestCode) {
-        if (ContextCompat.checkSelfPermission(this, perm) != PackageManager.PERMISSION_GRANTED) {
-            if (!ActivityCompat.shouldShowRequestPermissionRationale(this, perm)) {
-                ActivityCompat.requestPermissions(this, new String[]{perm},requestCode);
+        addressBinding.notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent( AddressActivity.this,NotificationActivity.class));
             }
-        }
-    }
+        });
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case REQUEST_FINE_LOCATION: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // granted
-                } else {
-                    // no granted
-                }
-                return;
+        addressBinding.searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent( AddressActivity.this,SearchProductActivity.class));
             }
+        });
 
-        }
-
-    }
-
-    private void animateCamera(Location location) {
-        LatLng latLng = new  LatLng(location.getLatitude(), location.getLongitude());
-        nMap.animateCamera(
-                CameraUpdateFactory.newCameraPosition(
-                        getCameraPositionWithBearing(
-                                latLng
-                        )
-                )
-        );
-    }
-
-    private CameraPosition getCameraPositionWithBearing(LatLng latLng) {
-        return new CameraPosition.Builder().target(latLng).zoom(16f).build();
-    }
-
-    @SuppressLint("LongLogTag")
-    private String getCompleteAddressString(double LATITUDE, double LONGITUDE) {
-        String strAdd = "";
-        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-        try {
-            List<Address> addresses = geocoder.getFromLocation(LATITUDE, LONGITUDE, 1);
-            if (addresses != null) {
-                Address returnedAddress = addresses.get(0);
-                StringBuilder strReturnedAddress = new StringBuilder("");
-
-                for (int i = 0; i <= returnedAddress.getMaxAddressLineIndex(); i++) {
-                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
-                }
-                strAdd = strReturnedAddress.toString();
-                Log.w("My Current loction address", strReturnedAddress.toString());
-            } else {
-                Log.w("My Current loction address", "No Address returned!");
+        addressBinding.searchText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent( AddressActivity.this,SearchProductActivity.class));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.w("My Current loction address", "Canont get Address!");
-        }
-        return strAdd;
+        });
+
+        addressBinding.save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddressActivity.this,OrderConfirmationActivity.class));
+            }
+        });
+
+
+
+
     }
+
+
+
 
 }

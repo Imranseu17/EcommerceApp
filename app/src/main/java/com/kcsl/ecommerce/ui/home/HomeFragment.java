@@ -20,12 +20,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.kcsl.ecommerce.activities.AllProductActivity;
 import com.kcsl.ecommerce.R;
+import com.kcsl.ecommerce.activities.CategoryActivity;
+import com.kcsl.ecommerce.activities.FlashSellActivity;
+import com.kcsl.ecommerce.activities.FollowActivity;
+import com.kcsl.ecommerce.activities.NewUserGiftActivity;
+import com.kcsl.ecommerce.activities.TradingActivity;
+import com.kcsl.ecommerce.activities.WorkSpaceActivity;
 import com.kcsl.ecommerce.adapter.AdjustListAdapter;
 import com.kcsl.ecommerce.adapter.BannerListAdapter;
 import com.kcsl.ecommerce.adapter.CategoriesTitleAdapter;
 import com.kcsl.ecommerce.adapter.ExtraCategoriesAdapter;
 import com.kcsl.ecommerce.adapter.FlashCellProductAdapter;
 import com.kcsl.ecommerce.adapter.FlashSellAdapter;
+import com.kcsl.ecommerce.adapter.FollowDesignAdapter;
 import com.kcsl.ecommerce.adapter.MainCategoriesAdapter;
 import com.kcsl.ecommerce.adapter.NewUserGiftAdapter;
 import com.kcsl.ecommerce.adapter.NumberOfCategoriesAdapter;
@@ -79,8 +86,8 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
 
     ArrayList categoryMainImages =
             new ArrayList<>(Arrays.asList(R.drawable.apparel,R.drawable.beauty,R.drawable.eletronics,
-                    R.drawable.furniture,R.drawable.kitchen,R.drawable.gift,
-                    R.drawable.computer, R.drawable.gaget, R.drawable.vagetable, R.drawable.fashion));
+                    R.drawable.furniture,R.drawable.kitchen_layout,R.drawable.gift,
+                    R.drawable.computer, R.drawable.gadget, R.drawable.vegetable, R.drawable.fashion));
     RecyclerView mainCategoriesList;
     ArrayList<String> mainCategoriesTitle;
 
@@ -101,20 +108,20 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
 
     RecyclerView flashCellList;
     ArrayList flashCellImages =
-            new ArrayList<>(Arrays.asList(R.drawable.shoes_image,R.drawable.image_product__1,R.drawable.shoes_image,
-                    R.drawable.image_product__1,R.drawable.shoes_image));
+            new ArrayList<>(Arrays.asList(R.drawable.nike_air_max,R.drawable.new_nike_air,R.drawable.nike_air_max,
+                    R.drawable.new_nike_air,R.drawable.nike_air_max));
 
     RecyclerView trandingList;
     ArrayList trandingImages =
-            new ArrayList<>(Arrays.asList(R.drawable.image_watch,R.drawable.hadphone,R.drawable.image_chair,
-                    R.drawable.image_watch,R.drawable.image_chair));
+            new ArrayList<>(Arrays.asList(R.drawable.smart_watch,R.drawable.headphone,R.drawable.image_chair,
+                    R.drawable.smart_watch,R.drawable.image_chair));
     ArrayList<String> trandingName;
 
 
     RecyclerView workspaceList;
     ArrayList workspaceImages =
-            new ArrayList<>(Arrays.asList(R.drawable.workspace_computer,R.drawable.workspace_image,R.drawable.workspace_computer,
-                    R.drawable.workspace_image,R.drawable.workspace_computer));
+            new ArrayList<>(Arrays.asList(R.drawable.workspace_computer,R.drawable.workspace_marketer,R.drawable.workspace_computer,
+                    R.drawable.workspace_marketer,R.drawable.workspace_computer));
     ArrayList<String> workspaceName;
     ArrayList<String> workspaceContent;
 
@@ -122,8 +129,8 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
     ArrayList<String> extraCategoriesName;
     ArrayList extraCategoriesImages =
             new ArrayList<>(Arrays.asList(R.drawable.home_icon_silhouette,
-                    R.drawable.home_icon_silhouette,R.drawable.home_icon_silhouette,
-                    R.drawable.home_icon_silhouette,R.drawable.home_icon_silhouette));
+                    R.drawable.hearts,R.drawable.free_shipping,
+                    R.drawable.e_mail,R.drawable.global_navigation));
 
     RecyclerView productDesignList1;
     RecyclerView  productDesignList2;
@@ -149,6 +156,20 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
     ArrayList<String> productDesignPercentege_two;
     ArrayList<String> productDesignPercentege_three;
     ArrayList<String> productDesignPercentege_four;
+
+    ArrayList newUserGiftImages =
+            new ArrayList<>(Arrays.asList(R.drawable.dkny,R.drawable.tommy,R.drawable.dkny,
+                    R.drawable.tommy,R.drawable.dkny));
+
+    ArrayList<String> follow_name;
+    ArrayList<String> follow_title;
+    RecyclerView follow_list;
+    ArrayList followImages =  new ArrayList<>(Arrays.asList(R.drawable.vegetablespixel,R.drawable.grocery_shop,
+            R.drawable.vegetablespixel,R.drawable.grocery_shop,R.drawable.vegetablespixel));
+
+    LinearLayout flash_cell_title_all,workspace_all_data,gift_title_all_data,
+            trading_title_all_data,category_title_all_data,all_follow_list;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -180,6 +201,13 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
         productDesignList2 = root.findViewById(R.id.product_design_list_two);
         productDesignList3 = root.findViewById(R.id.product_design_list_three);
         productDesignList4 = root.findViewById(R.id.product_design_list_four);
+        follow_list = root.findViewById(R.id.follow_list);
+        flash_cell_title_all = root.findViewById(R.id.flash_title_all);
+        workspace_all_data = root.findViewById(R.id.workspace_title_all);
+        gift_title_all_data = root.findViewById(R.id.gift_title_all);
+        trading_title_all_data = root.findViewById(R.id.trending_title_all);
+        category_title_all_data = root.findViewById(R.id.category_title_all);
+        all_follow_list = root.findViewById(R.id.all_follow_list);
 
         newProductsPresenter = new NewProductsPresenter(this);
         featuredProductsPresenter = new FeaturedProductsPresenter(this);
@@ -194,11 +222,19 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
         getAllFlashList();
         getAllTranding();
         getAllWorkspaces();
+        getAllFollowList();
         getAllExtraCategory();
         getAllProductDataList();
         getAllFlash();
         getAllNewProducts();
         getAllFeaturedProducts();
+
+        flash_cell_title_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), FlashSellActivity.class));
+            }
+        });
 
         newAllProduct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -216,6 +252,37 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
                 Intent intent = new Intent(getContext(), AllProductActivity.class);
                 intent.putExtra("HeaderName",textFeaturedProduct.getText().toString().trim());
                 startActivity(intent);
+            }
+        });
+
+        workspace_all_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), WorkSpaceActivity.class));
+            }
+        });
+        gift_title_all_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), NewUserGiftActivity.class));
+            }
+        });
+        trading_title_all_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), TradingActivity.class));
+            }
+        });
+        category_title_all_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), CategoryActivity.class));
+            }
+        });
+        all_follow_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), FollowActivity.class));
             }
         });
         return  root;
@@ -272,7 +339,7 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
         newGiftProductList.setLayoutManager(layoutManager);
 
        NewUserGiftAdapter newUserGiftAdapter = new NewUserGiftAdapter(getContext(),newGiftProductParcentege,
-               newGiftProductName,newGiftProductPrice,newGiftProductOldPrice);
+               newGiftProductName,newGiftProductPrice,newGiftProductOldPrice,newUserGiftImages);
         newGiftProductList.setAdapter(newUserGiftAdapter);
     }
 
@@ -541,6 +608,28 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
         extraCategoriesList.setAdapter(extra_categories_adapter);
     }
 
+    private void getAllFollowList() {
+        follow_name = new ArrayList<>();
+        follow_title = new ArrayList<>();
+        follow_list.setHasFixedSize(false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        follow_list.setLayoutManager(layoutManager);
+        follow_name.add("E-One Store");
+        follow_name.add("Groceries store");
+        follow_name.add("E-One Store");
+        follow_name.add("Groceries store");
+        follow_name.add("E-One Store");
+        follow_title.add("T");
+        follow_title.add("A");
+        follow_title.add("T");
+        follow_title.add("A");
+        follow_title.add("T");
+       FollowDesignAdapter followDesignAdapter = new FollowDesignAdapter(getContext(),
+               followImages,follow_name,follow_title);
+        follow_list.setAdapter(followDesignAdapter);
+
+    }
+
     private void getAllFlashList()
     {
         flashCellList.setHasFixedSize(false);
@@ -608,7 +697,7 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
     public void onNewProductSuccess(Products products, int code) {
         shimmerFrameLayout.stopShimmerAnimation();
         shimmerFrameLayout.setVisibility(View.GONE);
-        new_products_list.setVisibility(View.VISIBLE);
+        new_products_list.setVisibility(View.GONE);
         // New product List
         new_products_list.setHasFixedSize(false);
         // set a GridLayoutManager with 3 number of columns , horizontal gravity and false value for reverseLayout to show the items from start to end
@@ -622,8 +711,8 @@ public class HomeFragment extends Fragment implements ProductsUserView, Categori
 
     @Override
     public void onFeaturedProductSuccess(Products products, int code) {
-        featureProducts.setVisibility(View.VISIBLE);
-        featured_products_list.setVisibility(View.VISIBLE);
+        featureProducts.setVisibility(View.GONE);
+        featured_products_list.setVisibility(View.GONE);
         // featured product List
         featured_products_list.setHasFixedSize(false);
         // set a GridLayoutManager with 3 number of columns , horizontal gravity and false value for reverseLayout to show the items from start to end

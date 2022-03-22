@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="itemDetailScreenActivity"
+            type="com.kcsl.ecommerce.activities.ItemDetailsActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_background"
+        tools:context=".activities.ItemDetailsActivity">
+
+        <RelativeLayout
+            android:id="@+id/rectangle_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp">
+                <ImageButton
+                    android:id="@+id/back_button"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/calibri"
+                android:text="Category"
+                android:textAppearance="@style/explores_wo_flash"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_outline_notifications_24" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/search_product_box">
+
+                <ImageView
+                    android:id="@+id/search_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/search_vector"/>
+
+                <TextView
+                    android:id="@+id/search_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/personal_de"
+                    android:textAppearance="@style/personal_de"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/ic_outline_camera_alt_24"/>
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/rectangle_3"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/relative_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginEnd="25dp"
+                        android:background="@drawable/details_image_bg">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/giftImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:src="@drawable/polo_image"
+                                android:scaleType="fitXY" />
+
+                        </LinearLayout>
+
+
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="250dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="7dp"
+                            app:cardElevation="3dp"
+                            app:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/color_image_one" />
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="7dp"
+                            app:cardElevation="3dp"
+                            app:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <ImageView
+
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/color_image_two" />
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="7dp"
+                            app:cardElevation="3dp"
+                            app:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/color_image_three" />
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:id="@+id/dot"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:src="@drawable/oval_2"/>
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/oval_1"/>
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/oval_2"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/relative_layout"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="-34dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/favorite_shape"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/favoriteImage"
+                            android:layout_gravity="center"
+                            android:layout_width="26dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/love" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/reviews_text_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/relative_layout"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+                        <RatingBar
+                            android:id="@+id/productRating"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/relative_layout"
+                            android:layout_marginStart="25dp"
+                            android:layout_marginTop="5dp"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:stepSize="0.5"
+                            android:theme="@style/RatingBar" />
+
+                        <TextView
+                            android:id="@+id/reviews_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/reviews"
+                            android:textAppearance="@style/reviews"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/in_stock"
+                            android:textAppearance="@style/in_stock"
+                            />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/polo_ralph_"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_below="@id/reviews_text_layout"
+                        android:text="@string/polo_ralph_"
+                        android:textAppearance="@style/polo_ralph_"
+                        android:gravity="top"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/price_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/polo_ralph_"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/productPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/calibri"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:text="@string/bdt_19"
+                            android:textAllCaps="true"
+                            android:textAppearance="@style/bdt_19"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/productOldPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:fontFamily="@font/calibri"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:text="@string/bdt69"
+                            android:textAllCaps="true"
+                            android:textAppearance="@style/bdt69"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/price_layout"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/product"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/calibri"
+                           android:layout_marginStart="@dimen/_10sdp"
+                            android:maxLines="2"
+                            android:text="Product"
+                            android:textAppearance="@style/bdt_19"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:fontFamily="@font/calibri"
+                            android:maxLines="2"
+                            android:text="@string/details"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/details"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/reviews"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:fontFamily="@font/calibri"
+                            android:maxLines="2"
+                            android:text="Reviews"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/details"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/colours"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="40dp"
+                        android:layout_below="@id/item"
+                        android:text="@string/colours"
+                        android:textAppearance="@style/colours"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/colours_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/colours"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="@dimen/_8sdp" />
+
+                    <TextView
+                        android:id="@+id/sizes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="40dp"
+                        android:layout_below="@id/colours_list"
+                        android:text="Sizes"
+                        android:textAppearance="@style/colours"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sizes_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sizes"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:id="@+id/item_details"
+                        android:layout_below="@id/sizes_list"
+                        android:background="@drawable/item_details_background"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/item_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/item_detail"
+                            android:textAppearance="@style/item_detail"
+                            />
+
+                        <TextView
+                            android:id="@+id/light_blue_"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Light blue jacket by Polo Ralph Lauren.
+Button neck with spread collar. Zip placket. Embroidered logo to chest and cuff\u000DSide pockets/ Elasticated hem.
+        \n\nRegular fit. True to size. Model wears: UK S/ US\n\n\n"
+                            android:textAppearance="@style/light_blue"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/reviews_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/item_details"
+                        android:layout_marginTop="@dimen/padding_10"
+                        android:background="@drawable/item_details_background"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/reviews_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/category_title_text"
+                                android:layout_marginStart="40dp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/calibri"
+                                android:text="Reviews"
+                                android:textAppearance="@style/category"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <LinearLayout
+                                android:id="@+id/reviews_title_all"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="end"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:gravity="end|center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="View all"
+                                    android:textAppearance="@style/see_all"
+                                    android:textSize="14sp"
+                                    android:textColor="#ACACAC"
+                                    android:fontFamily="@font/calibri" />
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:src="@drawable/ic_baseline_arrow_forward"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Leslie Alexander"
+                                    android:layout_marginStart="40dp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:textAppearance="@style/see_all"
+                                    android:textSize="14sp"
+                                    android:textColor="#ACACAC"
+                                    android:fontFamily="@font/calibri" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:gravity="end"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:gravity="end|center"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Feb 10, 2022"
+                                        android:layout_marginEnd="@dimen/_10sdp"
+                                        android:textAppearance="@style/see_all"
+                                        android:textSize="14sp"
+                                        android:textColor="#ACACAC"
+                                        android:fontFamily="@font/calibri" />
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        <RatingBar
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="5dp"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:stepSize="0.5"
+                            android:theme="@style/RatingBar" />
+
+                        <TextView
+                            android:id="@+id/really_cool"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Really cool and stylish light weight jacket, has 3 inside pockets and feels strong. The fitting is good and not too loose, quite warm but definitely not for winter."
+                            android:textAppearance="@style/really_cool"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_marginStart="40dp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/calibri"
+                                android:text="Comment"
+                                android:textAppearance="@style/category"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="end"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:gravity="end|center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Helpful"
+                                    android:textAppearance="@style/see_all"
+                                    android:textSize="14sp"
+                                    android:textColor="#ACACAC"
+                                    android:fontFamily="@font/calibri" />
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:src="@drawable/ic_outline_thumb_up_alt_24"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/related_pro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="30dp"
+                       android:layout_below="@+id/reviews_layout"
+                        android:text="@string/related_pro"
+                        android:textAppearance="@style/related_pro"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/related_product_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/related_pro"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="10dp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rectangle_details_bottom"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/shop"/>
+
+                <TextView
+                    android:id="@+id/store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/store"
+                    android:textAppearance="@style/store"
+                   android:layout_marginTop="5dp"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/devider"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/chat"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chat"
+                    android:textAppearance="@style/store"
+                    android:layout_marginTop="5dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bottom_rectangle"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="30dp">
+
+                <TextView
+                    android:id="@+id/buy_now"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Buy Now"
+                    android:textAppearance="@style/buy_now_details"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bottom_rectangle"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Add to cart"
+                    android:textAppearance="@style/buy_now_details"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

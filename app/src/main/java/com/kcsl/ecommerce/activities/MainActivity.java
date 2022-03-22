@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,12 +21,15 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
@@ -61,10 +65,11 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
     private AppBarConfiguration mAppBarConfiguration;
     TextView mTextMessage;
     LogoutPresenter logoutPresenter;
-
     LinearLayout drawerOpen;
     ImageView searchbutton,notification;
     TextView searchText;
+    RelativeLayout rectangle;
+    NestedScrollView nestedScrollView;
 
 
     @Override
@@ -79,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
         searchText = findViewById(R.id.search_text);
         notification = findViewById(R.id.notification);
         drawerOpen = findViewById(R.id.drawer_open_button);
+        rectangle = findViewById(R.id.rectangle_3);
+        nestedScrollView = findViewById(R.id.nestedScrollView);
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawerOpen.setOnClickListener(new View.OnClickListener() {
@@ -103,16 +110,19 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         switch (menuItem.getItemId()){
                             case R.id.navigation_home:
+                                marginTop();
                                 navController.navigate(R.id.nav_home);
                                 break;
                             case R.id.navigation_wishlist:
-                                startActivity(new Intent(MainActivity.this,WishListActivity.class));
+                                marginTop();
+                                navController.navigate(R.id.wishListFragment);
                                 break;
                             case R.id.navigation_order:
-                                startActivity(new Intent(MainActivity.this,CartActivity.class));
+                                startActivity(new Intent(MainActivity.this,ShoppingCartActivity.class));
                                 break;
                             case R.id.navigation_account:
-                                startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+                                marginTopZero();
+                                navController.navigate(R.id.profileFragment);
                                 break;
 
                         }
@@ -140,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home,R.id.categoryFragment)
+                R.id.nav_home,R.id.profileFragment)
                 .setOpenableLayout(drawer)
                 .build();
 
@@ -194,6 +204,26 @@ public class MainActivity extends AppCompatActivity implements MessageUserView{
 
 
 
+    }
+
+    private void marginTopZero(){
+        nestedScrollView.setBackgroundColor(Color.TRANSPARENT);
+
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) nestedScrollView
+                .getLayoutParams();
+
+        layoutParams.setMargins(0, 0, 0, 0);
+        nestedScrollView.setLayoutParams(layoutParams);
+    }
+
+    private void marginTop(){
+        nestedScrollView.setBackgroundColor(Color.TRANSPARENT);
+
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) nestedScrollView
+                .getLayoutParams();
+
+        layoutParams.setMargins(0, 215, 0, 0);
+        nestedScrollView.setLayoutParams(layoutParams);
     }
 
     private void setFlag() {

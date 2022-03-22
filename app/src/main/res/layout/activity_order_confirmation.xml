@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="orderConfirmationActivity"
+            type="com.kcsl.ecommerce.activities.OrderConfirmationActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_background"
+        tools:context=".activities.ItemDetailsActivity">
+
+        <RelativeLayout
+            android:id="@+id/rectangle_3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp">
+                <ImageButton
+                    android:id="@+id/back_button"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/calibri"
+                android:text="Order Confirmation"
+                android:textSize="20dp"
+                android:textAppearance="@style/explores_wo_flash"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_outline_notifications_24" />
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rectangle_3"
+
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/thank_you_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:background="@drawable/thank_you_vector">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/right_vector"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="@dimen/_10sdp">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Thank you!"
+                            android:fontFamily="@font/calibri"
+                            android:textSize="20dp"
+                           android:textColor="@color/black"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Your order #BE12345 has been placed."
+                            android:fontFamily="@font/calibri"
+                            android:textSize="18dp"
+                            android:textColor="@color/black"
+                            />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/we_sent_an_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="We sent an email to orders@banuelson.com with your order confirmation and bill."
+                    android:fontFamily="@font/calibri"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:textSize="18dp"
+                    android:layout_below="@id/thank_you_layout"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/time_placed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Time placed: 17/02/2020 12:45 CEST"
+                    android:fontFamily="@font/calibri"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:textSize="18dp"
+                    android:layout_below="@id/we_sent_an_"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/shipping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/time_placed"
+                    android:gravity="top"
+                    android:text="@string/shipping"
+                    android:textAppearance="@style/shipping" />
+
+                <LinearLayout
+                    android:id="@+id/add_address_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/add_address_bg"
+                    android:layout_below="@+id/shipping"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rectangle_3"
+                            android:layout_marginStart="20dp"
+                            android:text="Imtiaj Alam \n imtiajalam72@mail.com \n +88 01625 669403"
+                            android:textAppearance="@style/shipping"
+                            android:gravity="top"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rectangle_3"
+                            android:layout_marginStart="20dp"
+                            android:text="Taltola Reazbag khilgong Dhaka \nBangladesh"
+                            android:textAppearance="@style/shipping"
+                            android:gravity="top"
+                            />
+
+
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/billing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/add_address_layout"
+                    android:gravity="top"
+                    android:text="Billing"
+                    android:textAppearance="@style/shipping" />
+
+                <LinearLayout
+                    android:id="@+id/billing_address_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/add_address_bg"
+                    android:layout_below="@+id/billing"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rectangle_3"
+                            android:layout_marginStart="20dp"
+                            android:text="Imtiaj Alam \n imtiajalam72@mail.com \n +88 01625 669403"
+                            android:textAppearance="@style/shipping"
+                            android:gravity="top"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rectangle_3"
+                            android:layout_marginStart="20dp"
+                            android:text="Taltola Reazbag khilgong Dhaka \nBangladesh"
+                            android:textAppearance="@style/shipping"
+                            android:gravity="top"
+                            />
+
+
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/order_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/billing_address_layout"
+                    android:gravity="top"
+                    android:text="Order Items"
+                    android:textAppearance="@style/shipping" />
+
+                <LinearLayout
+                    android:id="@+id/arrives_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/add_address_bg"
+                    android:layout_below="@+id/order_item"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/add_address_logo"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rectangle_3"
+                        android:layout_marginStart="@dimen/dp16"
+                        android:layout_gravity="center"
+                        android:text="Arrives by April 3 to April 9th"
+                        android:textAppearance="@style/shipping"
+                        android:gravity="top"
+                        />
+
+
+
+                </LinearLayout>
+
+
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/item_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/arrives_layout"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:id="@+id/order_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/item_list"
+                    android:gravity="top"
+                    android:text="Order Summary"
+                    android:textAppearance="@style/shipping" />
+
+
+                <LinearLayout
+                    android:id="@+id/subtotal_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/order_summary">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@id/item_list"
+                        android:gravity="top"
+                        android:text="Subtotal"
+                        android:textAppearance="@style/shipping" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@id/item_list"
+                        android:gravity="end"
+                        android:text="BDT 147,45"
+                        android:textAppearance="@style/shipping" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/shipping_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/subtotal_layout">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@id/item_list"
+                        android:gravity="top"
+                        android:text="Shipping"
+                        android:textAppearance="@style/shipping" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@id/item_list"
+                        android:gravity="end"
+                        android:text="BDT 0.00"
+                        android:textAppearance="@style/shipping" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/add_address_line"
+                    android:layout_below="@id/shipping_layout"
+                    android:layout_marginTop="5dp"/>
+
+                <LinearLayout
+                    android:id="@+id/total_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/line">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="top"
+                        android:text="Total"
+                        android:textAppearance="@style/shipping" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@id/item_list"
+                        android:gravity="end"
+                        android:text="BDT  147,45"
+                        android:textAppearance="@style/shipping" />
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cancel_btn_bg"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp"
+                    android:gravity="center"
+                    android:layout_below="@id/total_layout">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/red"
+                        android:gravity="center"
+                        android:text="Back to Shopping"
+                        android:textAppearance="@style/shipping" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>

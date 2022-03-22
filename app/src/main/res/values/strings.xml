@@ -67,11 +67,11 @@
     <string name="new_password_again">New Password Again</string>
     <string name="personal_de">Search Product</string>
     <string name="all">All</string>
-    <string name="new_user_fr">New User Free gift</string>
+    <string name="new_user_fr">New User \nFree gift</string>
     <string name="see_all">See all</string>
     <string name="category">Category</string>
     <string name="some_id_parcentege">-60%</string>
-    <string name="dkny_t_shir">DKNY t-shirt - colour  <br/> block front logo</string>
+    <string name="dkny_t_shir">DKNY t-shirt - colour  <br /> block front logo</string>
     <string name="bdt_19">BDT 19</string>
     <string name="bdt69">BDT69</string>
     <string name="adjustable_">Adjustable Office Chair</string>
@@ -95,4 +95,71 @@
     <string name="sports">All</string>
     <string name="some_id_cart_price">৳247.97</string>
     <string name="items">3 items</string>
+    <string name="brands_to_f">Store To Follow</string>
+    <string name="rahul">See all</string>
+    <string name="white_full_">E-One Store</string>
+    <string name="tradly">Sort by</string>
+    <string name="explores_wo_flash">Super Flash Sell</string>
+    <string name="title">Super Flash Sale\n50% Off</string>
+    <string name="best_match">Best Match</string>
+    <string name="time_ending">Time: ending soonest</string>
+    <string name="time_newly_">Time: newly listed</string>
+    <string name="price_shipp_lowest">Price + Shipping: lowest first</string>
+    <string name="price_shipp">Price + Shipping: highest first</string>
+    <string name="distance_ne">Distance: nearest first</string>
+    <string name="price_range">Price Range</string>
+    <string name="min">MIN</string>
+    <string name="condition">Condition</string>
+    <string name="view_item">View space</string>
+    <string name="featured_wo">FEATURED WORKSPACE</string>
+    <string name="see_more">See more</string>
+    <string name="usb_microph">USB Microphone</string>
+    <string name="ghc_549_00">BDT 87.00</string>
+    <string name="some_id_rating">4.8</string>
+    <string name="md_imtiaj_a">Md Imtiaj Alam</string>
+    <string name="add_mobile_">Add Mobile Number Now ></string>
+    <string name="some_id_10">10</string>
+    <string name="my_wishlist">My Wishlist</string>
+    <string name="follwed_sto">Follwed Stores</string>
+    <string name="recently_vi">Recently View</string>
+    <string name="voucher">Voucher</string>
+    <string name="my_order">My Order</string>
+    <string name="coins">Coins</string>
+    <string name="new_user_gift">New User Free Gift</string>
+    <string name="my_service">My Service</string>
+    <string name="orders">Orders</string>
+    <string name="log_out">Log Out</string>
+    <string name="apparel">Just for you</string>
+    <string name="cosmetics_b">CLOTHES</string>
+    <string name="reviews">126 reviews</string>
+    <string name="in_stock">In Stock</string>
+    <string name="polo_ralph_">Polo Ralph Lauren wind breaker \njacket - classic style - light blue</string>
+    <string name="details">Details</string>
+    <string name="colours">Colours</string>
+    <string name="item_detail">Item Details</string>
+    <string name="really_cool">
+
+Really cool and stylish light weight jacket, has 3 inside pockets and feels strong. The fitting is good and not too loose, quite warm but definitely not for winter.
+</string>
+    <string name="related_pro">Related Products</string>
+    <string name="store">Store</string>
+    <string name="offer">Offer</string>
+    <string name="save">Save</string>
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Others</item>
+    </string-array>
+
+    <string name="your_cupon_">* Your Cupon Is Not Correct</string>
+
+    <string name="items_3_">Items (3)</string>
+    <string name="shipping">Shipping</string>
+    <string name="this_is_the">This is the final step, after you touching Pay Now button, the payment will be transaction</string>
+    <string name="required_fi">*Required fields.</string>
+    <string name="some_id_recipents">1</string>
+    <string name="recipents_i">Recipents Information</string>
+
+
 </resources>

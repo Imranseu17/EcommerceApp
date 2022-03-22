@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kcsl.ecommerce.R;
@@ -43,6 +45,11 @@ public class ExtraCategoriesAdapter extends RecyclerView.Adapter {
         viewHolder.categories_image.setImageResource(Integer.parseInt(String.valueOf( extra_categoriesImages.get(position))));
         viewHolder.categories_name.setText(extra_categories_Name.get(position));
 
+        if(viewHolder.categories_name.getText().equals("All"))
+            viewHolder.background.setBackground(ContextCompat.getDrawable(context, R.drawable.all_bg));
+        else
+            viewHolder.background.setBackground(ContextCompat.getDrawable(context, R.drawable.bg_white_ripple_red_200_border_circular));
+
     }
 
 
@@ -56,11 +63,13 @@ public class ExtraCategoriesAdapter extends RecyclerView.Adapter {
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView categories_image ;
         TextView categories_name  ;
+        RelativeLayout background;
 
         public MyViewHolder(View itemView) {
             super(itemView);
              categories_image = itemView.findViewById(R.id.categories_image);
              categories_name = itemView.findViewById(R.id.categories_name);
+             background = itemView.findViewById(R.id.relative_layout);
 
         }
     }

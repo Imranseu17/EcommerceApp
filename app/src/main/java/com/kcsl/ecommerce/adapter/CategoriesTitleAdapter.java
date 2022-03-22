@@ -49,7 +49,7 @@ public class CategoriesTitleAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         CategoriesTitleAdapter.MyViewHolder viewHolder  = new CategoriesTitleAdapter.MyViewHolder(holder.itemView);
         viewHolder.categories_title_name.setText(categoriesTitleList.get(position));
-        if(viewHolder.categories_title_name.getText().equals("All")){
+        if(viewHolder.categories_title_name.getText().equals("All")||(viewHolder.categories_title_name.getText().equals("Show all"))){
             viewHolder.title_layout.setBackground(ContextCompat.getDrawable(context,
                     R.drawable.categories_title_checked_backgroud));
         }else if(viewHolder.categories_title_name.getText().equals("Woman's Fashion")){

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.ProfileEditScreenActivity">
+
+        <RelativeLayout
+            android:id="@+id/rectangle_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp">
+
+                <ImageButton
+                    android:id="@+id/back_button"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/calibri"
+                android:text="Profile"
+                android:textAppearance="@style/explores_wo_flash"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:contentDescription="@string/common_google_play_services_notification_ticker"
+                android:src="@drawable/ic_outline_notifications_24" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rectangle_3"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/notification_item_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/profile_icon" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/calibri"
+                android:text="Full Name"
+                android:textAppearance="@style/offer"
+                android:textSize="@dimen/dp16"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/nameEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/name_layout"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/dp16"
+            android:background="@drawable/edit_text_name_bg"
+            android:drawableRight="@null"
+            android:fontFamily="@font/calibri"
+            android:hint="Maximus Gold"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/gender_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameEt"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/notification_item_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_female_white_24dp" />
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/calibri"
+                android:text="Gender"
+                android:textAppearance="@style/offer"
+                android:textSize="@dimen/dp16"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    <com.reginald.editspinner.EditSpinner
+        android:id="@+id/edit_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gender_layout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text_gender_bg"
+        android:fontFamily="@font/calibri"
+        android:hint="Male"
+        android:textAlignment="center"
+        app:dropDownDrawable="@drawable/ic_arrow_drop_down_white_24dp"
+        app:dropDownDrawableHeight="25dp"
+        app:dropDownDrawableSpacing="15dp"
+        app:dropDownDrawableWidth="25dp" />
+
+        <LinearLayout
+            android:id="@+id/date_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_gender"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/notification_item_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_calendar_today_white_24dp"/>
+
+            <TextView
+                android:id="@+id/birthday_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/calibri"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:textSize="@dimen/dp16"
+                android:text="Your Birthday"
+                android:textAppearance="@style/offer"
+                />
+
+
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/birthdayEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/date_layout"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/dp16"
+            android:background="@drawable/edit_text_gender_bg"
+            android:drawableRight="@drawable/date_picker_icon"
+            android:fontFamily="@font/calibri"
+            android:hint="22-03-2022"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/birthdayEt"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/notification_item_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/phone_icon" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/calibri"
+                android:text="Phone"
+                android:textAppearance="@style/offer"
+                android:textSize="@dimen/dp16"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/phoneEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/phone_layout"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/dp16"
+            android:background="@drawable/edit_text_name_bg"
+            android:drawableRight="@null"
+            android:fontFamily="@font/calibri"
+            android:hint="01764310157"
+            android:inputType="number"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneEt"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/notification_item_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_email_white_24dp"/>
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/calibri"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:textSize="@dimen/dp16"
+                android:text="E - mail"
+                android:textAppearance="@style/offer"
+                />
+
+
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/emailEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/email_layout"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/dp16"
+            android:background="@drawable/edit_text_name_bg"
+            android:drawableRight="@null"
+            android:fontFamily="@font/calibri"
+            android:hint="imran1995bd@gmail.com"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="15sp" />
+
+
+        <RelativeLayout
+            android:id="@+id/change_password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailEt"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/notification_item_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/password_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/lock_icon"/>
+
+            <TextView
+                android:id="@+id/change_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/password_icon"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/calibri"
+                android:text="Change Password"
+                android:textAppearance="@style/offer"
+                android:textSize="@dimen/dp16"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@id/change_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/next_icon"/>
+
+
+
+
+        </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/change_password_layout"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="@dimen/dp16"
+        android:background="@drawable/save_button_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="311dp"
+            android:layout_height="25dp"
+            android:fontFamily="@font/calibri"
+            android:gravity="center"
+            android:text="@string/save"
+            android:textAppearance="@style/save"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    </RelativeLayout>
+

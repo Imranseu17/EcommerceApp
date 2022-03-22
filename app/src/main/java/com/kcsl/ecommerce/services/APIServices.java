@@ -28,6 +28,7 @@ import retrofit2.http.Query;
 
 public interface APIServices {
 
+
     @GET("/api/products")
     Call<Products> getAllProductsWithCategory(@HeaderMap Map<String, String> headers,
                                               @Query("category_id") int category_id, @Query("page") int page, @Query("limit") int limit);

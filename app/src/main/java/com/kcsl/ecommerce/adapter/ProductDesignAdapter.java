@@ -2,6 +2,7 @@ package com.kcsl.ecommerce.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,9 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kcsl.ecommerce.R;
+import com.kcsl.ecommerce.activities.ItemDetailsActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDesignAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
@@ -59,18 +62,21 @@ public class ProductDesignAdapter extends RecyclerView.Adapter<RecyclerView.View
                 | Paint.STRIKE_THRU_TEXT_FLAG);
 
         if(position%2==0){
-            viewHolder.relativeLayout.setBackground(ContextCompat.getDrawable(context,
-                    R.drawable.dkny));
-            viewHolder.favorite_image.setImageResource(R.drawable.unchecked_vector);
+            viewHolder.favorite_image.setImageResource(R.drawable.wishlist);
+            viewHolder.productImage.setImageResource(R.drawable.dkny);
         }
 
         else{
-            viewHolder.relativeLayout.setBackground(ContextCompat.getDrawable(context,
-                    R.drawable.bg_categories_more));
-            viewHolder.favorite_image.setImageResource(R.drawable.favorite_checked_vector);
+            viewHolder.favorite_image.setImageResource(R.drawable.love);
+            viewHolder.productImage.setImageResource(R.drawable.tommy);
         }
 
-
+        viewHolder.productImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context, ItemDetailsActivity.class));
+            }
+        });
 
     }
 
@@ -85,14 +91,14 @@ public class ProductDesignAdapter extends RecyclerView.Adapter<RecyclerView.View
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView favorite_image;
-        RelativeLayout relativeLayout;
+        ImageView productImage;
         TextView product_name,product_price,product_old_price,product_parcentege;
 
 
         public MyViewHolder(View itemView) {
             super(itemView);
             favorite_image = itemView.findViewById(R.id.favoriteImage);
-            relativeLayout = itemView.findViewById(R.id.relative_layout);
+            productImage = itemView.findViewById(R.id.productImage);
             product_name = itemView.findViewById(R.id.productName);
             product_price = itemView.findViewById(R.id.productPrice);
             product_old_price = itemView.findViewById(R.id.productOldPrice);
