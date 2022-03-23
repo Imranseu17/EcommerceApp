@@ -93,6 +93,7 @@
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/date_picker_icon.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/deadline_bg.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/details_image_bg.xml" value="0.1405" />
+        <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/details_line.xml" value="0.165" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/divider.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/dot.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/dot_1.xml" value="0.1405" />
@@ -237,8 +238,10 @@
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/splash_2.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/star.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/star_icon.xml" value="0.1405" />
+        <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/success_line.xml" value="0.165" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/thank_you_vector_bg.xml" value="0.2165" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/total_price_bg.xml" value="0.1405" />
+        <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/tracking_order_line.xml" value="0.1645" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/trading_product_bg.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/tranding_bg.xml" value="0.1405" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/drawable/underline_number_text.xml" value="0.1405" />
@@ -285,6 +288,7 @@
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_on_board_two.xml" value="0.15" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_order_accept.xml" value="0.209375" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_order_confirmation.xml" value="0.22" />
+        <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_order_details.xml" value="0.25" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_order_list.xml" value="0.25" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_payment_method.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/sumon/Documents/kcslecommerce-in-progress/app/src/main/res/layout/activity_product_details.xml" value="0.22" />

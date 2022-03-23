@@ -17,9 +17,13 @@
         android:theme="@style/Theme.KcslEcommerce"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.OrderDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
+        <activity
             android:name=".activities.TrackOrderActivity"
             android:exported="false"
-            android:theme="@style/Theme.KcslEcommerce.NoActionBar"/>
+            android:theme="@style/Theme.KcslEcommerce.NoActionBar" />
         <activity
             android:name=".activities.OrderAcceptActivity"
             android:exported="false"

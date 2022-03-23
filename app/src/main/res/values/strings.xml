@@ -160,6 +160,9 @@ Really cool and stylish light weight jacket, has 3 inside pockets and feels stro
     <string name="required_fi">*Required fields.</string>
     <string name="some_id_recipents">1</string>
     <string name="recipents_i">Recipents Information</string>
+    <string name="packing">Packing</string>
+    <string name="product">Product</string>
+
 
 
 </resources>
