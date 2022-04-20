@@ -78,17 +78,18 @@
             android:id="@+id/otp_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:layout_centerInParent="true"
             android:layout_below="@id/phone_numbe"
+            android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
-            app:height="40dp"
-            app:width="40dp"
+            android:textColor="@color/black"
             app:bar_enabled="true"
             app:bar_height="2dp"
+            app:height="40dp"
             app:length="6"
-            app:otp="622622"
-            app:otp_text_size="24dp"/>
+            app:otp_text_size="24dp"
+            app:width="40dp" />
+
+
 
         <TextView
             android:id="@+id/didn_t_you_"
